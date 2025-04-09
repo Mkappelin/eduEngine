@@ -1,0 +1,1337 @@
+Assimp version: 5.0.2399955716
+Assimp about to open file:
+assets/grass/grass_trees_merged2.fbx
+Assimp supported formats: 
+*.3d;*.3ds;*.3mf;*.ac;*.ac3d;*.acc;*.amf;*.ase;*.ask;*.assbin;*.b3d;*.blend;*.bvh;*.cob;*.csm;*.dae;*.dxf;*.enff;*.fbx;*.glb;*.gltf;*.hmp;*.ifc;*.ifczip;*.irr;*.irrmesh;*.lwo;*.lws;*.lxo;*.md2;*.md3;*.md5anim;*.md5camera;*.md5mesh;*.mdc;*.mdl;*.mesh;*.mesh.xml;*.mot;*.ms3d;*.ndo;*.nff;*.obj;*.off;*.ogex;*.pk3;*.ply;*.pmx;*.prj;*.q3o;*.q3s;*.raw;*.scn;*.sib;*.smd;*.stl;*.stp;*.ter;*.uc;*.vta;*.x;*.x3d;*.x3db;*.xgl;*.xml;*.zae;*.zgl
+Format fbx supported: YES
+Assimp load OK
+Scene overview
+	42 meshes
+	42 materials
+	0 embedded textures
+	0 animations
+	0 lights
+	0 cameras
+Animations:
+Loading mesh Grass_13
+	4488 vertices
+	2112 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	19296 vertices
+	9648 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1512 vertices
+	504 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1440 vertices
+	720 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	8928 vertices
+	4464 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	984 vertices
+	480 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1080 vertices
+	544 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	528 vertices
+	240 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	288 vertices
+	144 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	448 vertices
+	232 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	4620 vertices
+	2308 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	408 vertices
+	136 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	6012 vertices
+	3008 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	396 vertices
+	132 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1536 vertices
+	768 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1536 vertices
+	768 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	7776 vertices
+	3888 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	450 vertices
+	150 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1536 vertices
+	768 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	768 vertices
+	384 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	816 vertices
+	384 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	4288 vertices
+	2144 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	336 vertices
+	112 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	320 vertices
+	160 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1984 vertices
+	992 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	536 vertices
+	268 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1056 vertices
+	528 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1800 vertices
+	918 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	5508 vertices
+	2646 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	324 vertices
+	108 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	4080 vertices
+	1920 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	738 vertices
+	374 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	96 vertices
+	42 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	100 vertices
+	48 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	9240 vertices
+	4616 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	816 vertices
+	272 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	3072 vertices
+	1536 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	1024 vertices
+	512 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	284 vertices
+	140 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	3124 vertices
+	1556 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	252 vertices
+	84 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Loading mesh Grass_13
+	4 vertices
+	2 faces
+	0 bones
+	0 anim-meshes*
+	has tangents and bitangents: YES
+	has vertex colors: NO
+0 bones (nbr weights):
+Scene total vertices 103828, triangles 50760
+Bone mapping contains 0 bones in total
+Loading materials...
+	Num materials 42
+	Parent dir: assets/grass/
+Embedded textures: 0
+Loaded 0 embedded textures
+Loading material 'Green5', index 0...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White', index 1...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black', index 2...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'DarkGreen', index 3...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green', index 4...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Rock1', index 5...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Wood1', index 6...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Mushroom_Top', index 7...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Mushroom_Bottom', index 8...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Rock2', index 9...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White4', index 10...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black4', index 11...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White6', index 12...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black6', index 13...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'LightOrange2', index 14...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Orange3', index 15...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White5', index 16...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black5', index 17...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Orange2', index 18...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'LightOrange1', index 19...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green4', index 20...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White3', index 21...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black3', index 22...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'LightOrange', index 23...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Orange1', index 24...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green1', index 25...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Berry', index 26...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green3', index 27...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Cyan', index 28...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Yellow', index 29...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green6', index 30...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Wood', index 31...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'LightWood1', index 32...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Green2', index 33...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White1', index 34...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black1', index 35...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Orange', index 36...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'LightWood', index 37...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Rock', index 38...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'White2', index 39...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black2', index 40...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'phong2', index 41...
+Available textures:
+	None 0
+	diffuse 1
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 1
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+	raw path: /grass.png
+	local file: assets/grass//grass.png
+Loaded texture grass.png, 250x250, chan 4
+	raw path: /grass_normal.png
+	local file: assets/grass//grass_normal.png
+Loaded texture grass_normal.png, 250x250, chan 4
+Done loading textures
+Done loading materials
+Num materials 42
+Num textures 2
+	grass.png
+	grass_normal.png
+Loading animations...
+Animations in total 0

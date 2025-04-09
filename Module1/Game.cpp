@@ -4,6 +4,8 @@
 #include "imgui.h"
 #include "Log.hpp"
 #include "Game.hpp"
+#include <SDL.h>
+
 
 bool Game::init()
 {
@@ -15,12 +17,7 @@ bool Game::init()
 
     // Do some entt stuff
     entity_registry = std::make_shared<entt::registry>();
-    auto ent1 = entity_registry->create();
-    struct Tfm
-    {
-        float x, y, z;
-    };
-    entity_registry->emplace<Tfm>(ent1, Tfm{});
+    
 
     // Grass
     grassMesh = std::make_shared<eeng::RenderableMesh>();
@@ -32,6 +29,57 @@ bool Game::init()
 
     // Character
     characterMesh = std::make_shared<eeng::RenderableMesh>();
+
+    // Fox
+    foxMesh = std::make_shared<eeng::RenderableMesh>();
+    foxMesh->load("assets/Animals/Fox.fbx", false);
+
+    // Marco
+    marcoMesh = std::make_shared<eeng::RenderableMesh>();
+    marcoMesh->load("assets/Animals/Horse.fbx", false);
+
+    //NPC
+    
+    
+    //NPC entity
+    auto entNPC = entity_registry->create();
+    entity_registry->emplace<Tfm>(entNPC, Tfm{
+       { 10.0f, 0.0f, 10.0f },
+       { 0, 0, 0 },
+       { 0.01f, 0.01f, 0.01f } });
+    entity_registry->emplace<Velocity>(entNPC, Velocity{ glm::vec3(0.0f) });
+    entity_registry->emplace<MeshComponent>(entNPC, MeshComponent{ foxMesh });
+
+    NPCController npc = {};
+    npc.waypoints = {
+        glm::vec3(0, 0, 0),
+        glm::vec3(10, 0, 0),
+        glm::vec3(10, 0, 10),
+        glm::vec3(0, 0, 10)
+    };
+    npc.speed = 2.0f;
+    entity_registry->emplace<NPCController>(entNPC, npc);
+
+    //Player entity
+    auto entPlayer = entity_registry->create();
+    entity_registry->emplace<Tfm>(entPlayer, Tfm{
+       { 5.0f, 0.0f, 5.0f },
+       { 0, 0, 0 },
+       { 0.01f, 0.01f, 0.01f } });
+    entity_registry->emplace<Velocity>(entPlayer, Velocity{ glm::vec3(0.0f) });
+    entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ marcoMesh });
+    entity_registry->emplace<PlayerController>(entPlayer);
+
+
+    //Fox entity
+    auto entFox = entity_registry->create();
+    entity_registry->emplace<Tfm>(entFox, Tfm{
+        { 5.0f, 0.0f, 5.0f },
+        { 0, 0, 0 },
+        { 0.01f, 0.01f, 0.01f } });
+    entity_registry->emplace<MeshComponent>(entFox, MeshComponent{foxMesh});
+    entity_registry->emplace<Velocity>(entFox, Velocity{{1,1,1}});
+
 #if 0
     // Character
     characterMesh->load("assets/Ultimate Platformer Pack/Character/Character.fbx", false);
@@ -90,6 +138,51 @@ void Game::update(
 
     updatePlayer(deltaTime, input);
 
+
+    //Update Movement
+    auto view = entity_registry->view<Tfm, Velocity>();
+
+    for (auto entity: view) 
+    {
+        auto& position = view.get<Tfm>(entity);
+        auto& velocity = view.get<Velocity>(entity);
+
+        Game::MovingSystem(position, velocity, deltaTime);
+    }
+
+    //Update Player
+    auto viewPC = entity_registry->view<PlayerController, Velocity>();
+
+    for (auto entity : viewPC)
+    {
+        auto& pc = viewPC.get<PlayerController>(entity);
+        auto& velocity = viewPC.get<Velocity>(entity);
+
+        Game::PlayerControllerSystem(pc, velocity);
+    }
+
+    // Update Camera, till min player, inte default
+    auto viewC = entity_registry->view<PlayerController, Tfm>();
+    for (auto entity : viewC)
+    {
+        const auto& tfm = viewC.get<Tfm>(entity);
+        camera.lookAt = tfm.position;
+        /*player.pos = camera.lookAt; 
+        player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0, 2, 0), player.fwd };*/
+    }
+
+    //Update NPC
+    auto npcs = entity_registry->view<NPCController, Tfm, Velocity>();
+    for (auto entity : npcs)
+    {
+        auto& npc = npcs.get<NPCController>(entity);
+        auto& tfm = npcs.get<Tfm>(entity);
+        auto& vel = npcs.get<Velocity>(entity);
+
+        NPCControllerSystem(npc, tfm, vel);
+    }
+
+
     pointlight.pos = glm::vec3(
         glm_aux::R(time * 0.1f, { 0.0f, 1.0f, 0.0f }) *
         glm::vec4(100.0f, 100.0f, 100.0f, 1.0f));
@@ -135,6 +228,8 @@ void Game::render(
 {
     renderUI();
 
+
+
     matrices.windowSize = glm::ivec2(windowWidth, windowHeight);
 
     // Projection matrix
@@ -148,6 +243,17 @@ void Game::render(
 
     // Begin rendering pass
     forwardRenderer->beginPass(matrices.P, matrices.V, pointlight.pos, pointlight.color, camera.pos);
+
+    //Update Render
+    auto view = entity_registry->view<Tfm, MeshComponent>();
+
+    for (auto entity : view)
+    {
+        auto& transform = view.get<Tfm>(entity);
+        auto& mesh = view.get<MeshComponent>(entity);
+
+        Game::RenderSystem(forwardRenderer, transform, mesh);
+    }
 
     // Grass
     forwardRenderer->renderMesh(grassMesh, grassWorldMatrix);
@@ -225,7 +331,49 @@ void Game::render(
 
 void Game::renderUI()
 {
+    ImGui::Begin("Player Settings");
+
+    ImGui::Text("Modify player settings:");
+
+
+    ImGui::SliderFloat("Player max velocity", &player.velocity, 1.0f, 20.0f);
+
+    
+    ImGui::End();
+
+    ImGui::Begin("NPC Settings");
+
+    ImGui::Text("Modify NPC settings:");
+
+    static float foxScale = 0.01f;
+    ImGui::SliderFloat("Fox scale", &foxScale, 0.001f, 0.05f);
+
+    auto view = entity_registry->view<MeshComponent, Tfm>();
+    for (auto entity : view)
+    {
+        auto& mesh = view.get<MeshComponent>(entity);
+        if (mesh.mesh == foxMesh) // only change fox
+        {
+            auto& tfm = view.get<Tfm>(entity);
+            tfm.scale = glm::vec3(foxScale);
+        }
+    }
+
+    // Adjust NPC Behavíor
+    auto npcs = entity_registry->view<NPCController>();
+    for (auto entity : npcs)
+    {
+        auto& npc = npcs.get<NPCController>(entity);
+        ImGui::SliderFloat("NPC Speed", &npc.speed, 0.1f, 10.0f);
+        break; // just show for 1 for now
+    }
+
+    ImGui::End();
+
+
     ImGui::Begin("Game Info");
+
+    ImGui::Text("In-game Time: %.2f", SDL_GetTicks() / 1000.0f);
 
     ImGui::Text("Drawcall count %i", drawcallCount);
 
@@ -339,17 +487,72 @@ void Game::updatePlayer(
     player.fwd = glm::vec3(glm_aux::R(camera.yaw, glm_aux::vec3_010) * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
     player.right = glm::cross(player.fwd, glm_aux::vec3_010);
 
-    // Compute the total movement as a 3D vector
-    auto movement =
-        player.fwd * player.velocity * deltaTime * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
-        player.right * player.velocity * deltaTime * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
+    glm::vec3 moveDir =
+        player.fwd * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
+        player.right * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
 
-    // Update player position and forward view ray
-    player.pos += movement;
+    if (glm::length(moveDir) > 0.0f)
+        moveDir = glm::normalize(moveDir) * player.velocity;
+
+    // Apply to the actual entity with PlayerController
+    auto view = entity_registry->view<PlayerController>();
+    for (auto entity : view)
+    {
+        view.get<PlayerController>(entity).direction = moveDir;
+    }
+
+    // View ray (still useful)
     player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0.0f, 2.0f, 0.0f), player.fwd };
 
-    // Update camera to track the player
-    camera.lookAt += movement;
-    camera.pos += movement;
 
+
+    //// Compute the total movement as a 3D vector
+    //auto movement =
+    //    player.fwd * player.velocity * deltaTime * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
+    //    player.right * player.velocity * deltaTime * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
+
+    //// Update player position and forward view ray
+    //player.pos += movement;
+    //player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0.0f, 2.0f, 0.0f), player.fwd };
+
+    //// Update camera to track the player
+    //camera.lookAt += movement;
+    //camera.pos += movement;
+
+}
+
+void Game::MovingSystem(Game::Tfm& tfm, Game::Velocity& v, float deltaTime)
+{
+    tfm.position += v.velocity * deltaTime;
+}
+void Game::PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v)
+{
+    v.velocity = pc.direction;
+}
+void Game::RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh)
+{
+    glm::mat4 objWorldMatrix = glm_aux::TRS(
+        tfm.position,
+        tfm.rotation.y, { 0, 1, 0 },
+        tfm.scale);
+
+	forwardRenderer->renderMesh(entityMesh.mesh, objWorldMatrix);
+}
+void Game::NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& v)
+{
+    if (npcc.waypoints.empty()) return;
+
+    glm::vec3 target = npcc.waypoints[npcc.currentWaypoint];
+    glm::vec3 toTarget = target - tfm.position;
+
+    float distance = glm::length(toTarget);
+
+    if (distance < 0.5f) // close enough to switch
+    {
+        npcc.currentWaypoint = (npcc.currentWaypoint + 1) % npcc.waypoints.size();
+        return;
+    }
+
+    glm::vec3 direction = glm::normalize(toTarget);
+    v.velocity = direction * npcc.speed;
 }

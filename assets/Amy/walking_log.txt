@@ -1,0 +1,16 @@
+Assimp version: 5.0.2399955716
+Assimp about to open file:
+assets/Amy/walking.fbx
+Assimp supported formats: 
+*.3d;*.3ds;*.3mf;*.ac;*.ac3d;*.acc;*.amf;*.ase;*.ask;*.assbin;*.b3d;*.blend;*.bvh;*.cob;*.csm;*.dae;*.dxf;*.enff;*.fbx;*.glb;*.gltf;*.hmp;*.ifc;*.ifczip;*.irr;*.irrmesh;*.lwo;*.lws;*.lxo;*.md2;*.md3;*.md5anim;*.md5camera;*.md5mesh;*.mdc;*.mdl;*.mesh;*.mesh.xml;*.mot;*.ms3d;*.ndo;*.nff;*.obj;*.off;*.ogex;*.pk3;*.ply;*.pmx;*.prj;*.q3o;*.q3s;*.raw;*.scn;*.sib;*.smd;*.stl;*.stp;*.ter;*.uc;*.vta;*.x;*.x3d;*.x3db;*.xgl;*.xml;*.zae;*.zgl
+Format fbx supported: YES
+Assimp load OK
+Scene overview
+	0 meshes
+	0 materials
+	0 embedded textures
+	1 animations
+	0 lights
+	0 cameras
+Animations:
+	mixamo.com, channels 52, duration in ticks 31, tps 30

@@ -97,7 +97,7 @@ private:
     } player;
 
     // Game meshes
-    std::shared_ptr<eeng::RenderableMesh> grassMesh, horseMesh, characterMesh;
+    std::shared_ptr<eeng::RenderableMesh> grassMesh, horseMesh, characterMesh, foxMesh, marcoMesh;
 
     // Game entity transformations
     glm::mat4 characterWorldMatrix1, characterWorldMatrix2, characterWorldMatrix3;
@@ -123,6 +123,43 @@ private:
     void updatePlayer(
         float deltaTime,
         InputManagerPtr input);
+
+
+    //Assignment 1
+
+    struct Tfm
+    {
+        glm::vec3 position, rotation, scale;
+    };
+
+    struct Velocity 
+    {
+        glm::vec3 velocity;
+    };
+    struct MeshComponent 
+    {
+        std::shared_ptr<eeng::RenderableMesh> mesh;
+    };
+    struct NPCController 
+    {
+        std::vector<glm::vec3> waypoints;
+		int currentWaypoint = 0;
+		float speed = 2.0f;
+        bool canTrade;
+        bool canRepair;
+        bool hostile;
+    };
+    struct PlayerController 
+    {
+        glm::vec3 direction = glm::vec3(0.0f);
+    };
+
+
+    void MovingSystem(Tfm& t, Velocity& v, float dt);
+    void PlayerControllerSystem(PlayerController& pc, Velocity& v);
+    void NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& vel);
+    void RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh);
+
 };
 
 #endif

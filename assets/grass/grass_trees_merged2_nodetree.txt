@@ -1,0 +1,1 @@
+ [node 0][42 meshes] Grass_13 (children 0, stride 1, parent ofs 0)

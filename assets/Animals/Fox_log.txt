@@ -1,0 +1,1733 @@
+Assimp version: 5.0.2399955716
+Assimp about to open file:
+assets/Animals/Fox.fbx
+Assimp supported formats: 
+*.3d;*.3ds;*.3mf;*.ac;*.ac3d;*.acc;*.amf;*.ase;*.ask;*.assbin;*.b3d;*.blend;*.bvh;*.cob;*.csm;*.dae;*.dxf;*.enff;*.fbx;*.glb;*.gltf;*.hmp;*.ifc;*.ifczip;*.irr;*.irrmesh;*.lwo;*.lws;*.lxo;*.md2;*.md3;*.md5anim;*.md5camera;*.md5mesh;*.mdc;*.mdl;*.mesh;*.mesh.xml;*.mot;*.ms3d;*.ndo;*.nff;*.obj;*.off;*.ogex;*.pk3;*.ply;*.pmx;*.prj;*.q3o;*.q3s;*.raw;*.scn;*.sib;*.smd;*.stl;*.stp;*.ter;*.uc;*.vta;*.x;*.x3d;*.x3db;*.xgl;*.xml;*.zae;*.zgl
+Format fbx supported: YES
+Assimp load OK
+Scene overview
+	5 meshes
+	5 materials
+	0 embedded textures
+	24 animations
+	0 lights
+	0 cameras
+Animations:
+	Attack, channels 52, duration in ticks 40, tps 30
+	Death, channels 52, duration in ticks 32, tps 30
+	Eating, channels 52, duration in ticks 76, tps 30
+	Gallop, channels 52, duration in ticks 17, tps 30
+	Gallop_Jump, channels 52, duration in ticks 28, tps 30
+	Idle_HitReact_Left, channels 52, duration in ticks 20, tps 30
+	Idle_HitReact_Right, channels 52, duration in ticks 20, tps 30
+	Jump_ToIdle, channels 52, duration in ticks 40, tps 30
+	Walk, channels 52, duration in ticks 32, tps 30
+	Idle_2_HeadLow, channels 52, duration in ticks 120, tps 30
+	Idle_2, channels 52, duration in ticks 100, tps 30
+	Idle, channels 52, duration in ticks 100, tps 30
+	AnimalArmature|Attack, channels 52, duration in ticks 40, tps 30
+	AnimalArmature|Death, channels 52, duration in ticks 32, tps 30
+	AnimalArmature|Eating, channels 52, duration in ticks 76, tps 30
+	AnimalArmature|Gallop, channels 52, duration in ticks 17, tps 30
+	AnimalArmature|Gallop_Jump, channels 52, duration in ticks 28, tps 30
+	AnimalArmature|Idle, channels 52, duration in ticks 100, tps 30
+	AnimalArmature|Idle_2, channels 52, duration in ticks 100, tps 30
+	AnimalArmature|Idle_2_HeadLow, channels 52, duration in ticks 120, tps 30
+	AnimalArmature|Idle_HitReact_Left, channels 52, duration in ticks 20, tps 30
+	AnimalArmature|Idle_HitReact_Right, channels 52, duration in ticks 20, tps 30
+	AnimalArmature|Jump_ToIdle, channels 52, duration in ticks 40, tps 30
+	AnimalArmature|Walk, channels 52, duration in ticks 32, tps 30
+Loading mesh Cube
+	1770 vertices
+	878 faces
+	51 bones
+	0 anim-meshes*
+	has tangents and bitangents: NO
+	has vertex colors: NO
+51 bones (nbr weights):
+	Body (0)
+	Back (294)
+	Torso (224)
+	Torso2 (332)
+	Torso3 (262)
+	Neck1 (258)
+	Neck2 (128)
+	Neck3 (234)
+	Head (408)
+	Ear1.L (110)
+	Ear2.L (159)
+	Ear3.L (77)
+	Ear4.L (26)
+	Ear1.R (80)
+	Ear2.R (159)
+	Ear3.R (77)
+	Ear4.R (26)
+	FrontShoulder.L (141)
+	FrontUpperLeg.L (175)
+	FrontLowerLeg.L (108)
+	FrontShoulder.R (141)
+	FrontUpperLeg.R (175)
+	FrontLowerLeg.R (108)
+	BackShoulder.L (110)
+	BackLeg.L (177)
+	BackUpperLeg.L (166)
+	BackLowerLeg.L (14)
+	BackShoulder.R (110)
+	BackLeg.R (177)
+	BackUpperLeg.R (166)
+	BackLowerLeg.R (14)
+	Tail1 (220)
+	Tail2 (176)
+	Tail3 (160)
+	Tail4 (192)
+	Tail5 (136)
+	Tail6 (44)
+	Tail7 (10)
+	Tail8 (0)
+	PoleTargetBack.L (0)
+	PoleTarget.L (0)
+	PoleTargetBack.R (0)
+	PoleTarget.R (0)
+	IKBackLeg.L (0)
+	FFB.L (0)
+	IKFrontLeg.L (0)
+	FF.L (0)
+	IKBackLeg.R (0)
+	FFB.R (0)
+	IKFrontLeg.R (0)
+	FF.R (0)
+Loading mesh Cube
+	768 vertices
+	380 faces
+	51 bones
+	0 anim-meshes*
+	has tangents and bitangents: NO
+	has vertex colors: NO
+51 bones (nbr weights):
+	Body (0)
+	Back (64)
+	Torso (84)
+	Torso2 (88)
+	Torso3 (66)
+	Neck1 (90)
+	Neck2 (194)
+	Neck3 (240)
+	Head (438)
+	Ear1.L (50)
+	Ear2.L (58)
+	Ear3.L (62)
+	Ear4.L (49)
+	Ear1.R (34)
+	Ear2.R (58)
+	Ear3.R (62)
+	Ear4.R (49)
+	FrontShoulder.L (111)
+	FrontUpperLeg.L (61)
+	FrontLowerLeg.L (0)
+	FrontShoulder.R (111)
+	FrontUpperLeg.R (61)
+	FrontLowerLeg.R (0)
+	BackShoulder.L (47)
+	BackLeg.L (87)
+	BackUpperLeg.L (51)
+	BackLowerLeg.L (0)
+	BackShoulder.R (47)
+	BackLeg.R (87)
+	BackUpperLeg.R (51)
+	BackLowerLeg.R (0)
+	Tail1 (56)
+	Tail2 (20)
+	Tail3 (0)
+	Tail4 (0)
+	Tail5 (60)
+	Tail6 (78)
+	Tail7 (92)
+	Tail8 (96)
+	PoleTargetBack.L (0)
+	PoleTarget.L (0)
+	PoleTargetBack.R (0)
+	PoleTarget.R (0)
+	IKBackLeg.L (0)
+	FFB.L (0)
+	IKFrontLeg.L (0)
+	FF.L (0)
+	IKBackLeg.R (0)
+	FFB.R (0)
+	IKFrontLeg.R (0)
+	FF.R (0)
+Loading mesh Cube
+	1168 vertices
+	568 faces
+	51 bones
+	0 anim-meshes*
+	has tangents and bitangents: NO
+	has vertex colors: NO
+51 bones (nbr weights):
+	Body (0)
+	Back (0)
+	Torso (0)
+	Torso2 (0)
+	Torso3 (0)
+	Neck1 (0)
+	Neck2 (0)
+	Neck3 (0)
+	Head (80)
+	Ear1.L (0)
+	Ear2.L (12)
+	Ear3.L (22)
+	Ear4.L (40)
+	Ear1.R (0)
+	Ear2.R (12)
+	Ear3.R (22)
+	Ear4.R (40)
+	FrontShoulder.L (0)
+	FrontUpperLeg.L (0)
+	FrontLowerLeg.L (145)
+	FrontShoulder.R (0)
+	FrontUpperLeg.R (0)
+	FrontLowerLeg.R (145)
+	BackShoulder.L (0)
+	BackLeg.L (0)
+	BackUpperLeg.L (54)
+	BackLowerLeg.L (174)
+	BackShoulder.R (0)
+	BackLeg.R (0)
+	BackUpperLeg.R (54)
+	BackLowerLeg.R (174)
+	Tail1 (0)
+	Tail2 (0)
+	Tail3 (0)
+	Tail4 (0)
+	Tail5 (0)
+	Tail6 (0)
+	Tail7 (0)
+	Tail8 (0)
+	PoleTargetBack.L (0)
+	PoleTarget.L (0)
+	PoleTargetBack.R (0)
+	PoleTarget.R (0)
+	IKBackLeg.L (194)
+	FFB.L (158)
+	IKFrontLeg.L (173)
+	FF.L (176)
+	IKBackLeg.R (194)
+	FFB.R (158)
+	IKFrontLeg.R (173)
+	FF.R (176)
+Loading mesh Cube
+	30 vertices
+	14 faces
+	51 bones
+	0 anim-meshes*
+	has tangents and bitangents: NO
+	has vertex colors: NO
+51 bones (nbr weights):
+	Body (0)
+	Back (0)
+	Torso (0)
+	Torso2 (0)
+	Torso3 (0)
+	Neck1 (0)
+	Neck2 (0)
+	Neck3 (0)
+	Head (30)
+	Ear1.L (0)
+	Ear2.L (0)
+	Ear3.L (0)
+	Ear4.L (0)
+	Ear1.R (0)
+	Ear2.R (0)
+	Ear3.R (0)
+	Ear4.R (0)
+	FrontShoulder.L (0)
+	FrontUpperLeg.L (0)
+	FrontLowerLeg.L (0)
+	FrontShoulder.R (0)
+	FrontUpperLeg.R (0)
+	FrontLowerLeg.R (0)
+	BackShoulder.L (0)
+	BackLeg.L (0)
+	BackUpperLeg.L (0)
+	BackLowerLeg.L (0)
+	BackShoulder.R (0)
+	BackLeg.R (0)
+	BackUpperLeg.R (0)
+	BackLowerLeg.R (0)
+	Tail1 (0)
+	Tail2 (0)
+	Tail3 (0)
+	Tail4 (0)
+	Tail5 (0)
+	Tail6 (0)
+	Tail7 (0)
+	Tail8 (0)
+	PoleTargetBack.L (0)
+	PoleTarget.L (0)
+	PoleTargetBack.R (0)
+	PoleTarget.R (0)
+	IKBackLeg.L (0)
+	FFB.L (0)
+	IKFrontLeg.L (0)
+	FF.L (0)
+	IKBackLeg.R (0)
+	FFB.R (0)
+	IKFrontLeg.R (0)
+	FF.R (0)
+Loading mesh Cube
+	16 vertices
+	8 faces
+	51 bones
+	0 anim-meshes*
+	has tangents and bitangents: NO
+	has vertex colors: NO
+51 bones (nbr weights):
+	Body (0)
+	Back (0)
+	Torso (0)
+	Torso2 (0)
+	Torso3 (0)
+	Neck1 (0)
+	Neck2 (0)
+	Neck3 (2)
+	Head (16)
+	Ear1.L (0)
+	Ear2.L (8)
+	Ear3.L (0)
+	Ear4.L (0)
+	Ear1.R (0)
+	Ear2.R (8)
+	Ear3.R (0)
+	Ear4.R (0)
+	FrontShoulder.L (0)
+	FrontUpperLeg.L (0)
+	FrontLowerLeg.L (0)
+	FrontShoulder.R (0)
+	FrontUpperLeg.R (0)
+	FrontLowerLeg.R (0)
+	BackShoulder.L (0)
+	BackLeg.L (0)
+	BackUpperLeg.L (0)
+	BackLowerLeg.L (0)
+	BackShoulder.R (0)
+	BackLeg.R (0)
+	BackUpperLeg.R (0)
+	BackLowerLeg.R (0)
+	Tail1 (0)
+	Tail2 (0)
+	Tail3 (0)
+	Tail4 (0)
+	Tail5 (0)
+	Tail6 (0)
+	Tail7 (0)
+	Tail8 (0)
+	PoleTargetBack.L (0)
+	PoleTarget.L (0)
+	PoleTargetBack.R (0)
+	PoleTarget.R (0)
+	IKBackLeg.L (0)
+	FFB.L (0)
+	IKFrontLeg.L (0)
+	FF.L (0)
+	IKBackLeg.R (0)
+	FFB.R (0)
+	IKFrontLeg.R (0)
+	FF.R (0)
+Scene total vertices 3752, triangles 1848
+Bone mapping contains 51 bones in total
+Loading materials...
+	Num materials 5
+	Parent dir: assets/Animals/
+Embedded textures: 0
+Loaded 0 embedded textures
+Loading material 'Main', index 0...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Main_Light', index 1...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Grey', index 2...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Black', index 3...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Loading material 'Eyes', index 4...
+Available textures:
+	None 0
+	diffuse 0
+	Specular 0
+	Ambient 0
+	Emissive 0
+	Height 0
+	Normals 0
+	Shininess 0
+	Opacity 0
+	Displacement 0
+	Lightmap 0
+	Reflection 0
+	Base color 0
+	Normal camera 0
+	Emission color 0
+	Metalness 0
+	Diffuse roughness 0
+	AO 0
+	Unknown 0
+Loading textures...
+Done loading textures
+Done loading materials
+Num materials 5
+Num textures 0
+Loading animations...
+Loading animation 'Attack', dur in ticks 40, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  38, nbr scale keys  38, nbr rot keys  38
+	Loading channel BackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Body, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel FrontLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Head, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  22, nbr scale keys  22, nbr rot keys  22
+	Loading channel IKFrontLeg.R, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Neck1, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel Neck2, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel Neck3, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail4, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail5, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail6, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail7, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail8, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  35, nbr scale keys  35, nbr rot keys  35
+	Loading channel Torso3, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+Loading animation 'Death', dur in ticks 32, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel BackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.R, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel BackUpperLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel BackUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Body, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Ear3.L, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Ear3.R, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel Ear4.L, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Ear4.R, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel FrontLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel FrontUpperLeg.R, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel Head, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel IKBackLeg.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel IKBackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.L, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel IKFrontLeg.R, nbr pos keys  24, nbr scale keys  24, nbr rot keys  24
+	Loading channel Neck1, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel Neck2, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Neck3, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  10, nbr scale keys  10, nbr rot keys  10
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Tail3, nbr pos keys  24, nbr scale keys  24, nbr rot keys  24
+	Loading channel Tail4, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel Tail5, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Tail6, nbr pos keys  27, nbr scale keys  27, nbr rot keys  27
+	Loading channel Tail7, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Tail8, nbr pos keys  12, nbr scale keys  12, nbr rot keys  12
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+Loading animation 'Eating', dur in ticks 76, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLowerLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLowerLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackShoulder.L, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel BackShoulder.R, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel BackUpperLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackUpperLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel Body, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  71, nbr scale keys  71, nbr rot keys  71
+	Loading channel FrontLowerLeg.R, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel FrontUpperLeg.R, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel Head, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Neck3, nbr pos keys  47, nbr scale keys  47, nbr rot keys  47
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail3, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail4, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail5, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail6, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail7, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail8, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  43, nbr scale keys  43, nbr rot keys  43
+Loading animation 'Gallop', dur in ticks 17, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  16, nbr scale keys  16, nbr rot keys  16
+	Loading channel BackLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLowerLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLowerLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackShoulder.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackShoulder.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackUpperLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackUpperLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Body, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+	Loading channel Ear2.R, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+	Loading channel Ear3.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear3.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear4.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear4.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontLowerLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontUpperLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Head, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKBackLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck1, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck2, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck3, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail3, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail4, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail5, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail6, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail7, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail8, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Torso, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Torso2, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Gallop_Jump', dur in ticks 28, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLowerLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLowerLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackUpperLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackUpperLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Body, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear2.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear3.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear3.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear4.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear4.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FrontLowerLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FrontUpperLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Head, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKBackLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKFrontLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKFrontLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Neck1, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Neck2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck3, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel PoleTarget.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTarget.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTargetBack.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTargetBack.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail3, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail4, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail5, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail6, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail7, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail8, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso2, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Idle_HitReact_Left', dur in ticks 20, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel BackUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Body, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear3.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Head, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Neck3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail4, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail5, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail6, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail7, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail8, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Idle_HitReact_Right', dur in ticks 20, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel BackShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Body, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear3.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Head, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Neck3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail4, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail5, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail6, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail7, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail8, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Jump_ToIdle', dur in ticks 40, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Body, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear2.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear3.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear3.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear4.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear4.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel FrontLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Head, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel IKBackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKBackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKFrontLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKFrontLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Neck1, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Neck2, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Neck3, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel PoleTarget.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTarget.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTargetBack.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTargetBack.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel Tail1, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Tail2, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail3, nbr pos keys  39, nbr scale keys  39, nbr rot keys  39
+	Loading channel Tail4, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail5, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Tail6, nbr pos keys  39, nbr scale keys  39, nbr rot keys  39
+	Loading channel Tail7, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail8, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Torso, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Torso2, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Walk', dur in ticks 32, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel BackLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackUpperLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Body, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear3.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear4.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear4.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Head, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKBackLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKBackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck1, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck3, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail3, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail4, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail5, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail6, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail7, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail8, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Idle_2_HeadLow', dur in ticks 120, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  105, nbr scale keys  105, nbr rot keys  105
+	Loading channel BackLeg.R, nbr pos keys  103, nbr scale keys  103, nbr rot keys  103
+	Loading channel BackLowerLeg.L, nbr pos keys  110, nbr scale keys  110, nbr rot keys  110
+	Loading channel BackLowerLeg.R, nbr pos keys  110, nbr scale keys  110, nbr rot keys  110
+	Loading channel BackShoulder.L, nbr pos keys  79, nbr scale keys  79, nbr rot keys  79
+	Loading channel BackShoulder.R, nbr pos keys  53, nbr scale keys  53, nbr rot keys  53
+	Loading channel BackUpperLeg.L, nbr pos keys  118, nbr scale keys  118, nbr rot keys  118
+	Loading channel BackUpperLeg.R, nbr pos keys  118, nbr scale keys  118, nbr rot keys  118
+	Loading channel Body, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear3.R, nbr pos keys  59, nbr scale keys  59, nbr rot keys  59
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel FrontLowerLeg.R, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel FrontUpperLeg.R, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Head, nbr pos keys  76, nbr scale keys  76, nbr rot keys  76
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  95, nbr scale keys  95, nbr rot keys  95
+	Loading channel Neck2, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Neck3, nbr pos keys  37, nbr scale keys  37, nbr rot keys  37
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  120, nbr scale keys  120, nbr rot keys  120
+	Loading channel Tail4, nbr pos keys  108, nbr scale keys  108, nbr rot keys  108
+	Loading channel Tail5, nbr pos keys  104, nbr scale keys  104, nbr rot keys  104
+	Loading channel Tail6, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel Tail7, nbr pos keys  110, nbr scale keys  110, nbr rot keys  110
+	Loading channel Tail8, nbr pos keys  81, nbr scale keys  81, nbr rot keys  81
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Idle_2', dur in ticks 100, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLowerLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLowerLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackShoulder.L, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel BackShoulder.R, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel BackUpperLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackUpperLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel Body, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear3.R, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel FrontLowerLeg.R, nbr pos keys  64, nbr scale keys  64, nbr rot keys  64
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel FrontUpperLeg.R, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel Head, nbr pos keys  82, nbr scale keys  82, nbr rot keys  82
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  99, nbr scale keys  99, nbr rot keys  99
+	Loading channel Neck2, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel Neck3, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Tail4, nbr pos keys  92, nbr scale keys  92, nbr rot keys  92
+	Loading channel Tail5, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Tail6, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel Tail7, nbr pos keys  94, nbr scale keys  94, nbr rot keys  94
+	Loading channel Tail8, nbr pos keys  72, nbr scale keys  72, nbr rot keys  72
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'Idle', dur in ticks 100, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackLeg.R, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackLowerLeg.L, nbr pos keys  93, nbr scale keys  93, nbr rot keys  93
+	Loading channel BackLowerLeg.R, nbr pos keys  93, nbr scale keys  93, nbr rot keys  93
+	Loading channel BackShoulder.L, nbr pos keys  44, nbr scale keys  44, nbr rot keys  44
+	Loading channel BackShoulder.R, nbr pos keys  69, nbr scale keys  69, nbr rot keys  69
+	Loading channel BackUpperLeg.L, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackUpperLeg.R, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel Body, nbr pos keys  84, nbr scale keys  84, nbr rot keys  84
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel FrontLowerLeg.R, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FrontUpperLeg.R, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Head, nbr pos keys  84, nbr scale keys  84, nbr rot keys  84
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Neck2, nbr pos keys  80, nbr scale keys  80, nbr rot keys  80
+	Loading channel Neck3, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Tail4, nbr pos keys  92, nbr scale keys  92, nbr rot keys  92
+	Loading channel Tail5, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Tail6, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel Tail7, nbr pos keys  94, nbr scale keys  94, nbr rot keys  94
+	Loading channel Tail8, nbr pos keys  72, nbr scale keys  72, nbr rot keys  72
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Attack', dur in ticks 40, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  38, nbr scale keys  38, nbr rot keys  38
+	Loading channel BackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Body, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel FrontLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Head, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  22, nbr scale keys  22, nbr rot keys  22
+	Loading channel IKFrontLeg.R, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Neck1, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel Neck2, nbr pos keys  36, nbr scale keys  36, nbr rot keys  36
+	Loading channel Neck3, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail4, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail5, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail6, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail7, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail8, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  35, nbr scale keys  35, nbr rot keys  35
+	Loading channel Torso3, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+Loading animation 'AnimalArmature|Death', dur in ticks 32, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel BackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.R, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel BackUpperLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel BackUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Body, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Ear3.L, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Ear3.R, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel Ear4.L, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Ear4.R, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel FrontLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel FrontUpperLeg.R, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel Head, nbr pos keys  32, nbr scale keys  32, nbr rot keys  32
+	Loading channel IKBackLeg.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel IKBackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.L, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel IKFrontLeg.R, nbr pos keys  24, nbr scale keys  24, nbr rot keys  24
+	Loading channel Neck1, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel Neck2, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Neck3, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  10, nbr scale keys  10, nbr rot keys  10
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  23, nbr scale keys  23, nbr rot keys  23
+	Loading channel Tail3, nbr pos keys  24, nbr scale keys  24, nbr rot keys  24
+	Loading channel Tail4, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel Tail5, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Tail6, nbr pos keys  27, nbr scale keys  27, nbr rot keys  27
+	Loading channel Tail7, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Tail8, nbr pos keys  12, nbr scale keys  12, nbr rot keys  12
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+Loading animation 'AnimalArmature|Eating', dur in ticks 76, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLowerLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackLowerLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackShoulder.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackShoulder.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackUpperLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel BackUpperLeg.R, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel Body, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel FrontLowerLeg.R, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  74, nbr scale keys  74, nbr rot keys  74
+	Loading channel FrontUpperLeg.R, nbr pos keys  73, nbr scale keys  73, nbr rot keys  73
+	Loading channel Head, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Neck3, nbr pos keys  47, nbr scale keys  47, nbr rot keys  47
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail3, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail4, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail5, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail6, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail7, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Tail8, nbr pos keys  77, nbr scale keys  77, nbr rot keys  77
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  43, nbr scale keys  43, nbr rot keys  43
+Loading animation 'AnimalArmature|Gallop', dur in ticks 17, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  16, nbr scale keys  16, nbr rot keys  16
+	Loading channel BackLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLowerLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackLowerLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackShoulder.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackShoulder.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackUpperLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel BackUpperLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Body, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+	Loading channel Ear2.R, nbr pos keys  13, nbr scale keys  13, nbr rot keys  13
+	Loading channel Ear3.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear3.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear4.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Ear4.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontLowerLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel FrontUpperLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Head, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKBackLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel IKFrontLeg.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck1, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck2, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Neck3, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail3, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail4, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail5, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail6, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail7, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail8, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Torso, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Torso2, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Gallop_Jump', dur in ticks 28, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLowerLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLowerLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackShoulder.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackUpperLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackUpperLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Body, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear2.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear3.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear3.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear4.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Ear4.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FrontLowerLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel FrontUpperLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Head, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKBackLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKFrontLeg.L, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel IKFrontLeg.R, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Neck1, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Neck2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck3, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel PoleTarget.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTarget.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTargetBack.L, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel PoleTargetBack.R, nbr pos keys  18, nbr scale keys  18, nbr rot keys  18
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail3, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail4, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail5, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail6, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail7, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Tail8, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso2, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Idle', dur in ticks 100, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackLeg.R, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackLowerLeg.L, nbr pos keys  93, nbr scale keys  93, nbr rot keys  93
+	Loading channel BackLowerLeg.R, nbr pos keys  93, nbr scale keys  93, nbr rot keys  93
+	Loading channel BackShoulder.L, nbr pos keys  69, nbr scale keys  69, nbr rot keys  69
+	Loading channel BackShoulder.R, nbr pos keys  69, nbr scale keys  69, nbr rot keys  69
+	Loading channel BackUpperLeg.L, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel BackUpperLeg.R, nbr pos keys  100, nbr scale keys  100, nbr rot keys  100
+	Loading channel Body, nbr pos keys  84, nbr scale keys  84, nbr rot keys  84
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  15, nbr scale keys  15, nbr rot keys  15
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel FrontLowerLeg.R, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel FrontUpperLeg.R, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
+	Loading channel Head, nbr pos keys  84, nbr scale keys  84, nbr rot keys  84
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Neck2, nbr pos keys  80, nbr scale keys  80, nbr rot keys  80
+	Loading channel Neck3, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Tail4, nbr pos keys  92, nbr scale keys  92, nbr rot keys  92
+	Loading channel Tail5, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Tail6, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel Tail7, nbr pos keys  94, nbr scale keys  94, nbr rot keys  94
+	Loading channel Tail8, nbr pos keys  72, nbr scale keys  72, nbr rot keys  72
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Idle_2', dur in ticks 100, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLowerLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackLowerLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackShoulder.L, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel BackShoulder.R, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel BackUpperLeg.L, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel BackUpperLeg.R, nbr pos keys  66, nbr scale keys  66, nbr rot keys  66
+	Loading channel Body, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear3.R, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  65, nbr scale keys  65, nbr rot keys  65
+	Loading channel FrontLowerLeg.R, nbr pos keys  64, nbr scale keys  64, nbr rot keys  64
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel FrontUpperLeg.R, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel Head, nbr pos keys  82, nbr scale keys  82, nbr rot keys  82
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  99, nbr scale keys  99, nbr rot keys  99
+	Loading channel Neck2, nbr pos keys  63, nbr scale keys  63, nbr rot keys  63
+	Loading channel Neck3, nbr pos keys  31, nbr scale keys  31, nbr rot keys  31
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  101, nbr scale keys  101, nbr rot keys  101
+	Loading channel Tail4, nbr pos keys  92, nbr scale keys  92, nbr rot keys  92
+	Loading channel Tail5, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Tail6, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel Tail7, nbr pos keys  94, nbr scale keys  94, nbr rot keys  94
+	Loading channel Tail8, nbr pos keys  72, nbr scale keys  72, nbr rot keys  72
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Idle_2_HeadLow', dur in ticks 120, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  105, nbr scale keys  105, nbr rot keys  105
+	Loading channel BackLeg.R, nbr pos keys  103, nbr scale keys  103, nbr rot keys  103
+	Loading channel BackLowerLeg.L, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel BackLowerLeg.R, nbr pos keys  57, nbr scale keys  57, nbr rot keys  57
+	Loading channel BackShoulder.L, nbr pos keys  79, nbr scale keys  79, nbr rot keys  79
+	Loading channel BackShoulder.R, nbr pos keys  79, nbr scale keys  79, nbr rot keys  79
+	Loading channel BackUpperLeg.L, nbr pos keys  118, nbr scale keys  118, nbr rot keys  118
+	Loading channel BackUpperLeg.R, nbr pos keys  118, nbr scale keys  118, nbr rot keys  118
+	Loading channel Body, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear3.R, nbr pos keys  59, nbr scale keys  59, nbr rot keys  59
+	Loading channel Ear4.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear4.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel FrontLowerLeg.R, nbr pos keys  111, nbr scale keys  111, nbr rot keys  111
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel FrontUpperLeg.R, nbr pos keys  26, nbr scale keys  26, nbr rot keys  26
+	Loading channel Head, nbr pos keys  76, nbr scale keys  76, nbr rot keys  76
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  95, nbr scale keys  95, nbr rot keys  95
+	Loading channel Neck2, nbr pos keys  89, nbr scale keys  89, nbr rot keys  89
+	Loading channel Neck3, nbr pos keys  37, nbr scale keys  37, nbr rot keys  37
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail3, nbr pos keys  120, nbr scale keys  120, nbr rot keys  120
+	Loading channel Tail4, nbr pos keys  108, nbr scale keys  108, nbr rot keys  108
+	Loading channel Tail5, nbr pos keys  104, nbr scale keys  104, nbr rot keys  104
+	Loading channel Tail6, nbr pos keys  55, nbr scale keys  55, nbr rot keys  55
+	Loading channel Tail7, nbr pos keys  110, nbr scale keys  110, nbr rot keys  110
+	Loading channel Tail8, nbr pos keys  81, nbr scale keys  81, nbr rot keys  81
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Idle_HitReact_Left', dur in ticks 20, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel BackUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Body, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear3.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Head, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Neck3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail4, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail5, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail6, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail7, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail8, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Idle_HitReact_Right', dur in ticks 20, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel BackLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackShoulder.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel BackShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel BackUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Body, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear3.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Ear4.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontLowerLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontShoulder.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.L, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel FrontUpperLeg.R, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Head, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel IKBackLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKBackLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel IKFrontLeg.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Neck2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Neck3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail3, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail4, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail5, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail6, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail7, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Tail8, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Jump_ToIdle', dur in ticks 40, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  29, nbr scale keys  29, nbr rot keys  29
+	Loading channel BackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackShoulder.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel BackUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Body, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Ear2.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear3.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear3.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear4.L, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Ear4.R, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel FrontLowerLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel FrontUpperLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Head, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel IKBackLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKBackLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKFrontLeg.L, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel IKFrontLeg.R, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Neck1, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Neck2, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Neck3, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel PoleTarget.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTarget.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTargetBack.L, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel PoleTargetBack.R, nbr pos keys  19, nbr scale keys  19, nbr rot keys  19
+	Loading channel Tail1, nbr pos keys  14, nbr scale keys  14, nbr rot keys  14
+	Loading channel Tail2, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail3, nbr pos keys  39, nbr scale keys  39, nbr rot keys  39
+	Loading channel Tail4, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail5, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Tail6, nbr pos keys  39, nbr scale keys  39, nbr rot keys  39
+	Loading channel Tail7, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Tail8, nbr pos keys  40, nbr scale keys  40, nbr rot keys  40
+	Loading channel Torso, nbr pos keys  30, nbr scale keys  30, nbr rot keys  30
+	Loading channel Torso2, nbr pos keys  41, nbr scale keys  41, nbr rot keys  41
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Loading animation 'AnimalArmature|Walk', dur in ticks 32, tps 30, nbr channels 52
+	Loading channel AnimalArmature, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Back, nbr pos keys  25, nbr scale keys  25, nbr rot keys  25
+	Loading channel BackLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackShoulder.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackUpperLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel BackUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Body, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear1.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear1.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear2.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Ear3.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear3.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear4.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Ear4.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FF.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FF.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FFB.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontLowerLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontLowerLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontShoulder.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontShoulder.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel FrontUpperLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel FrontUpperLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Head, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKBackLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKBackLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.L, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel IKFrontLeg.R, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck1, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Neck3, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel PoleTarget.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTarget.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.L, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel PoleTargetBack.R, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail1, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Tail2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail3, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail4, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail5, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail6, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail7, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Tail8, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Torso, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+	Loading channel Torso2, nbr pos keys  33, nbr scale keys  33, nbr rot keys  33
+	Loading channel Torso3, nbr pos keys  2, nbr scale keys  2, nbr rot keys  2
+Animations in total 24
