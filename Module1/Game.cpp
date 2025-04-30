@@ -31,7 +31,7 @@ bool Game::init()
     characterMesh = std::make_shared<eeng::RenderableMesh>();
 
     // Fox
-    foxMesh = std::make_shared<eeng::RenderableMesh>();
+    foxMesh = std::make_shared<eeng::RenderableMesh>(); 
     foxMesh->load("assets/Animals/Fox.fbx", false);
 
     // Marco
