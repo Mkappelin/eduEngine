@@ -3,9 +3,7 @@
 
 #include "RenderableMesh.hpp"
 
-#include <glm/gtc/quaternion.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
+#include <glm/gtx/dual_quaternion.hpp>
 #include <assimp/version.h>
 
 #include "ShaderLoader.h"
@@ -46,47 +44,48 @@ namespace eeng
             glmm[3][3] = aim.d4;
             return glmm;
         }
-    }
 
-    // Half-ugly way to dump node tree without coupling tree with node type
-    namespace
-    {
-        /// Dump tree node to stream
-        void dump_tree_to_stream(const VectorTree<SkeletonNode>& tree,
-            unsigned i,
-            const std::string& indent,
-            logstreamer_t& outstream)
+        inline glm::mat4 dualquatToMat4(const glm::dualquat& dq)
         {
-            const auto& node = tree.nodes[i];
-            outstream << indent;
-            outstream << " [node " << i << "]";
-            if (node.bone_index != EENG_NULL_INDEX)
-                outstream << "[bone " << node.bone_index << "]";
-            if (node.nbr_meshes)
-                outstream << "[" << node.nbr_meshes << " meshes]";
-            outstream << " " << node.name
-                << " (children " << node.m_nbr_children
-                << ", stride " << node.m_branch_stride
-                << ", parent ofs " << node.m_parent_ofs << ")";
-            outstream << std::endl;
-            int ci = i + 1;
-            for (int j = 0; j < node.m_nbr_children; j++)
-            {
-                dump_tree_to_stream(tree, ci, indent + "\t", outstream);
-                ci += tree.nodes[ci].m_branch_stride;
-            }
+            // Extract the real (rotation) part and dual part (translation info)
+            glm::quat realPart = dq.real;
+            glm::quat dualPart = dq.dual;
+
+            // Compute the translation: t = 2 * (dual * conjugate(real))
+            glm::quat t = dualPart * glm::conjugate(realPart);
+            glm::vec3 translation(t.x, t.y, t.z);
+            translation *= 2.0f;
+
+            // Convert the rotation quaternion to a 4x4 rotation matrix
+            glm::mat4 rotationMatrix = glm::mat4_cast(realPart);
+
+            // Create the final transformation matrix
+            glm::mat4 transformMatrix = rotationMatrix;
+            // In a column-major matrix, the translation vector is set in the 4th column.
+            transformMatrix[3] = glm::vec4(translation, 1.0f);
+
+            return transformMatrix;
         }
 
-        /// Dump node tree to stream
-        void dump_tree_to_stream(const VectorTree<SkeletonNode>& tree,
+        void dump_tree_to_stream(
+            const VecTree<SkeletonNode>& tree,
             logstreamer_t&& outstream)
         {
-            int i = 0;
-            while (i < tree.nodes.size())
-            {
-                dump_tree_to_stream(tree, i, "", outstream);
-                i += tree.nodes[i].m_branch_stride;
-            }
+            tree.traverse_depthfirst([&](const SkeletonNode& node, size_t index, size_t level)
+                {
+                    auto [nbr_children, branch_stride, parent_ofs] = tree.get_node_info(node);
+
+                    for (int i = 0; i < level; i++) outstream << "  ";
+                    outstream << " [node " << index << "]";
+                    if (node.bone_index != EENG_NULL_INDEX)
+                        outstream << "[bone " << node.bone_index << "]";
+                    if (node.nbr_meshes)
+                        outstream << "[" << node.nbr_meshes << " meshes]";
+                    outstream << " " << node.name
+                        << " (children " << nbr_children
+                        << ", stride " << branch_stride
+                        << ", parent ofs " << parent_ofs << ")\n";
+                });
         }
     }
 
@@ -208,6 +207,8 @@ namespace eeng
         glBindVertexArray(0);
 
         loadNodes(aiscene->mRootNode);
+
+        //m_nodetree.print_to_stream(logstreamer_t{ filepath + filename + "_nodetree.txt", PRTVERBOSE });
         dump_tree_to_stream(m_nodetree, logstreamer_t{ filepath + filename + "_nodetree.txt", PRTVERBOSE });
         // m_nodetree.debug_print({filepath + filename + "_nodetree.txt", PRTVERBOSE});
 
@@ -346,7 +347,7 @@ namespace eeng
                 // bones
                 for (int j = mesh.base_vertex; j < mesh.base_vertex + mesh.nbr_vertices; j++)
                 {
-                    for (int k = 0; k < NUM_BONES_PER_VERTEX; k++)
+                    for (int k = 0; k < BonesPerVertex; k++)
                     {
                         if (scene_skinweights[j].bone_weights[k] > 0)
                             m_bone_aabbs_bind[scene_skinweights[j].bone_indices[k]].grow(scene_positions[j]);
@@ -515,31 +516,60 @@ namespace eeng
 
         // Link node->bone (0 or 1) and node->meshes (0+)
         // Link bones<->nodes (1<->1)
+#if 1
+        m_nodetree.traverse_depthfirst([&](SkeletonNode& node, size_t i, size_t level)
+            {
+                // Link node<->meshes (re-retrieve the original assimp node by name)
+                // Note: the node transform is ignored during rendering if the mesh
+                // is skinned, since it is part of the inverse-transpose matrix.
+                aiNode* ainode = ainode_root->FindNode(node.name.c_str());
+                for (int j = 0; j < ainode->mNumMeshes; j++)
+                {
+                    m_meshes[ainode->mMeshes[j]].node_index = i;
+                }
+                node.nbr_meshes = ainode->mNumMeshes;
+
+                // Node<->bone
+                auto boneit = m_bonehash.find(node.name);
+                if (boneit != m_bonehash.end())
+                {
+                    m_bones[boneit->second].node_index = i;
+                    node.bone_index = boneit->second;
+                }
+            });
+
+            m_nodetree.traverse_depthfirst([&](SkeletonNode& node, size_t i, size_t level)
+            {
+                m_nodehash[node.name] = i;
+            });
+#else
         for (int i = 0; i < m_nodetree.nodes.size(); i++)
         {
             // Link node<->meshes (re-retrieve the original assimp node by name)
             // Note: the node transform is ignored during rendering if the mesh
             // is skinned, since it is part of the inverse-transpose matrix.
-            aiNode* ainode = ainode_root->FindNode(m_nodetree.nodes[i].name.c_str());
+            aiNode* ainode = ainode_root->FindNode(m_nodetree.nodes[i].m_payload.name.c_str());
             for (int j = 0; j < ainode->mNumMeshes; j++)
             {
                 m_meshes[ainode->mMeshes[j]].node_index = i;
             }
-            m_nodetree.nodes[i].nbr_meshes = ainode->mNumMeshes;
+            m_nodetree.nodes[i].m_payload.nbr_meshes = ainode->mNumMeshes;
 
             // Node<->bone
-            auto boneit = m_bonehash.find(m_nodetree.nodes[i].name);
+            auto boneit = m_bonehash.find(m_nodetree.nodes[i].m_payload.name);
             if (boneit != m_bonehash.end())
             {
                 m_bones[boneit->second].node_index = i;
-                m_nodetree.nodes[i].bone_index = boneit->second;
+                m_nodetree.nodes[i].m_payload.bone_index = boneit->second;
             }
         }
 
         // Build node name<->index hash
         // Note: Not currently used, though seems sensical to have.
         for (int i = 0; i < m_nodetree.nodes.size(); i++)
-            m_nodehash[m_nodetree.nodes[i].name] = i;
+            m_nodehash[m_nodetree.nodes[i].m_payload.name] = i;
+#endif
+
     }
 
     void RenderableMesh::loadNode(aiNode* ainode)
@@ -556,8 +586,14 @@ namespace eeng
 
         // Create & insert node
         SkeletonNode stnode(node_name, transform);
-        if (!m_nodetree.insert(stnode, parent_name))
+        if (!parent_name.size())
+        {
+            m_nodetree.insert_as_root(stnode);
+        }
+        else if (!m_nodetree.insert(stnode, parent_name))
+        {
             throw std::runtime_error("Node tree insertion failed, hierarchy corrupt");
+        }
 
         for (int i = 0; i < ainode->mNumChildren; i++)
         {
@@ -616,7 +652,7 @@ namespace eeng
         unsigned nbr_textures = material->GetTextureCount(textureType);
 
         if (!nbr_textures)
-            return NO_TEXTURE;
+            return NoTexture;
         if (nbr_textures > 1)
             throw std::runtime_error("Multiple textures of type " + std::to_string(textureType) + ", aborting. Nbr = " + std::to_string(nbr_textures));
 
@@ -635,7 +671,7 @@ namespace eeng
             &ai_blend,
             &ai_texop,
             &ai_texmapmode) != AI_SUCCESS)
-            return NO_TEXTURE;
+            return NoTexture;
 
         // Relative texture path, e.g. "/textures/texture.png"
         std::string textureRelPath{ ai_texpath.C_Str() };
@@ -814,7 +850,7 @@ namespace eeng
             mtl.textureIndices[TextureType::Opacity] = loadTexture(pMaterial, aiTextureType_OPACITY, local_filepath);
 
             // Fallback: assimp seems to label OBJ normal maps as HEIGHT type textures.
-            if (mtl.textureIndices[TextureType::Normal] == NO_TEXTURE)
+            if (mtl.textureIndices[TextureType::Normal] == NoTexture)
                 mtl.textureIndices[TextureType::Normal] = loadTexture(pMaterial, aiTextureType_HEIGHT, local_filepath);
 
             log << "Done loading textures" << std::endl;
@@ -843,7 +879,7 @@ namespace eeng
             anim.name = std::string(aianim->mName.C_Str());
             anim.duration_ticks = aianim->mDuration;
             anim.tps = aianim->mTicksPerSecond;
-            anim.node_animations.resize(m_nodetree.nodes.size());
+            anim.node_animations.resize(m_nodetree.size());
 
             log << priority(PRTSTRICT)
                 << "Loading animation '" << anim.name
@@ -893,111 +929,148 @@ namespace eeng
         log << priority(PRTSTRICT) << "Animations in total " << m_animations.size() << std::endl;
     }
 
-    glm::mat4 RenderableMesh::blendTransformAtTime(const AnimationClip* anim,
-        const NodeKeyframes& nodeanim,
-        float time) const
+    glm::mat4 RenderableMesh::animateNode(
+        size_t node_index,
+        const AnimationClip* anim,
+        float ntime) const
     {
-        float dur_ticks = anim->duration_ticks;
-        float animdur_sec = dur_ticks / (anim->tps * 1);
-        float animtime_sec = fmod(time, animdur_sec);
-        float animtime_ticks = animtime_sec * anim->tps * 1;
-        float animtime_nrm = animtime_ticks / dur_ticks;
+        const auto& node = m_nodetree.get_payload_at(node_index);
+        if (!anim) return node.local_tfm;
+        if (!anim->node_animations[node_index].is_used) return node.local_tfm;
 
-        return blendTransformAtFrac(anim, nodeanim, animtime_nrm);
-    }
+        auto& node_keyframes = anim->node_animations[node_index];
+        const auto& rot_keys = node_keyframes.rot_keys;
+        const auto& pos_keys = node_keyframes.pos_keys;
+        const auto& scale_keys = node_keyframes.scale_keys;
+        const size_t nbr_pos_keys = pos_keys.size();
+        const size_t nbr_rot_keys = rot_keys.size();
+        const size_t nbr_scale_keys = scale_keys.size();
 
-    glm::mat4 RenderableMesh::blendTransformAtFrac(const AnimationClip* anim,
-        const NodeKeyframes& nodeanim,
-        float frac) const
-    {
         // Blend translation keys
-        float pos_indexf = frac * (nodeanim.pos_keys.size() - 1);
-        unsigned pos_index0 = std::floor(pos_indexf);
-        unsigned pos_index1 = std::min<unsigned>(pos_index0 + 1,
-            (unsigned)nodeanim.pos_keys.size() - 1);
-        const auto blendpos = glm::mix(nodeanim.pos_keys[pos_index0],
-            nodeanim.pos_keys[pos_index1],
-            pos_indexf - pos_index0);
+        float pos_indexf = ntime * (nbr_pos_keys - 1ull);
+        size_t pos_index0 = std::floor(pos_indexf);
+        size_t pos_index1 = std::min(pos_index0 + 1ull, nbr_pos_keys - 1ull);
+        const auto blendpos = glm::mix(pos_keys[pos_index0], pos_keys[pos_index1], pos_indexf - pos_index0);
 
         // Blend rotation keys
-        float rot_indexf = frac * (nodeanim.rot_keys.size() - 1);
-        unsigned rot_index0 = std::floor(rot_indexf);
-        unsigned rot_index1 = std::min<unsigned>(rot_index0 + 1,
-            (unsigned)nodeanim.rot_keys.size() - 1);
-        const auto& rot0 = nodeanim.rot_keys[rot_index0];
-        const auto& rot1 = nodeanim.rot_keys[rot_index1];
-        const auto blendrot = glm::slerp(rot0,
-            rot1,
-            rot_indexf - rot_index0);
+        float rot_indexf = ntime * (nbr_rot_keys - 1ull);
+        size_t rot_index0 = std::floor(rot_indexf);
+        size_t rot_index1 = std::min(rot_index0 + 1ull, nbr_rot_keys - 1ull);
+        const auto blendrot = glm::slerp(rot_keys[rot_index0], rot_keys[rot_index1], rot_indexf - rot_index0);
 
         // Blend scaling keys
-        float scale_indexf = frac * (nodeanim.scale_keys.size() - 1);
-        unsigned scale_index0 = std::floor(scale_indexf);
-        unsigned scale_index1 = std::min<unsigned>(scale_index0 + 1,
-            (unsigned)nodeanim.scale_keys.size() - 1);
-        const auto blendscale = glm::mix(nodeanim.scale_keys[scale_index0],
-            nodeanim.scale_keys[scale_index1],
-            scale_indexf - scale_index0);
+        float scale_indexf = ntime * (nbr_scale_keys - 1ull);
+        size_t scale_index0 = std::floor(scale_indexf);
+        size_t scale_index1 = std::min(scale_index0 + 1ull, nbr_scale_keys - 1ull);
+        const auto blendscale = glm::mix(scale_keys[scale_index0], scale_keys[scale_index1], scale_indexf - scale_index0);
 
+        // Concatenate
         const glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), blendpos);
         const glm::mat4 rotationMatrix = glm::mat4_cast(blendrot);
-        ;
         const glm::mat4 scaleMatrix = glm::scale(glm::mat4(1.0f), blendscale);
         return translationMatrix * rotationMatrix * scaleMatrix;
     }
 
-    void RenderableMesh::animate(int anim_index,
+    glm::mat4 RenderableMesh::animateBlendNode(
+        size_t node_index,
+        const AnimationClip* anim0,
+        const AnimationClip* anim1,
+        float ntime0,
+        float ntime1,
+        float frac) const
+    {
+        assert(frac >= 0.0f && frac <= 1.0f);
+        const auto& node = m_nodetree.get_payload_at(node_index);
+
+        assert(anim0 && anim1);
+        if (!anim0->node_animations[node_index].is_used) return node.local_tfm;
+        if (!anim1->node_animations[node_index].is_used) return node.local_tfm;
+
+        const NodeKeyframes* node_keyframe[] = {
+             &anim0->node_animations[node_index],
+             &anim1->node_animations[node_index]
+        };
+        float ntime[] = { ntime0, ntime1 };
+        glm::vec3 blendpos[2];
+        glm::quat blendrot[2];
+        glm::vec3 blendscale[2];
+
+        for (int i = 0; i < 2; i++)
+        {
+            const auto& pos_keys = node_keyframe[i]->pos_keys;
+            const auto& rot_keys = node_keyframe[i]->rot_keys;
+            const auto& scale_keys = node_keyframe[i]->scale_keys;
+            const size_t nbr_pos_keys = pos_keys.size();
+            const size_t nbr_rot_keys = rot_keys.size();
+            const size_t nbr_scale_keys = scale_keys.size();
+
+            // Blend translation keys
+            float pos_indexf = ntime[i] * (nbr_pos_keys - 1ull);
+            size_t pos_index0 = std::floor(pos_indexf);
+            size_t pos_index1 = std::min(pos_index0 + 1ull, nbr_pos_keys - 1ull);
+            blendpos[i] = glm::mix(pos_keys[pos_index0], pos_keys[pos_index1], pos_indexf - pos_index0);
+
+            // Blend rotation keys
+            float rot_indexf = ntime[i] * (nbr_rot_keys - 1ull);
+            size_t rot_index0 = std::floor(rot_indexf);
+            size_t rot_index1 = std::min(rot_index0 + 1ull, nbr_rot_keys - 1ull);
+            blendrot[i] = glm::slerp(rot_keys[rot_index0], rot_keys[rot_index1], rot_indexf - rot_index0);
+
+            // Blend scaling keys
+            float scale_indexf = ntime[i] * (nbr_scale_keys - 1ull);
+            size_t scale_index0 = std::floor(scale_indexf);
+            size_t scale_index1 = std::min(scale_index0 + 1ull, nbr_scale_keys - 1ull);
+            blendscale[i] = glm::mix(scale_keys[scale_index0], scale_keys[scale_index1], scale_indexf - scale_index0);
+        }
+
+        // Use dual quaternions to blend rotations and translations between clips
+        glm::dualquat dqA = glm::dualquat(blendrot[0], blendpos[0]);
+        glm::dualquat dqB = glm::dualquat(blendrot[1], blendpos[1]);
+        glm::dualquat dq = glm::normalize(glm::lerp(dqA, dqB, frac));
+
+        // Apply blended scaling (not supported by dual quaternions)
+        glm::mat4 M = dualquatToMat4(dq);
+        M = glm::scale(M, glm::mix(blendscale[0], blendscale[1], frac));
+
+        return M;
+    }
+
+    void RenderableMesh::animate(
+        int anim_index,
         float time,
         AnmationTimeFormat animTimeFormat)
     {
-        glm::mat4(RenderableMesh:: * blendFunc)(const AnimationClip * anim,
-            const NodeKeyframes & keys,
-            float time) const;
-        if (animTimeFormat == AnmationTimeFormat::RealTime)
-            blendFunc = &RenderableMesh::blendTransformAtTime;
-        else
-            blendFunc = &RenderableMesh::blendTransformAtFrac;
-
         AnimationClip* anim = nullptr;
         if (anim_index >= 0 && anim_index < getNbrAnimations())
         {
             anim = &m_animations[anim_index];
         }
 
-        for (auto& node : m_nodetree.nodes)
-            node.global_tfm = glm::mat4{ 1.0f };
-
-        int node_index = 0;
-        while (node_index < m_nodetree.nodes.size())
+        // Convert to normalized time
+        float ntime = time;
+        if (anim && animTimeFormat == AnmationTimeFormat::RealTime)
         {
-            glm::mat4 node_tfm = m_nodetree.nodes[node_index].local_tfm;
-            glm::mat4 global_tfm;
-
-            // If an animation key is available, use it to replace the node tfm
-            if (anim)
-            {
-                const auto& node_anim = anim->node_animations[node_index];
-                if (node_anim.is_used)
-                    // node_tfm = blendTransformAtTime(anim, node_anim, time);
-                    node_tfm = std::invoke(blendFunc, this, anim, node_anim, time);
-            }
-
-            // Apply parent transform
-            const auto parent_ofs = m_nodetree.nodes[node_index].m_parent_ofs;
-            if (parent_ofs)
-            {
-                const auto& parent_tfm = m_nodetree.nodes[node_index - parent_ofs].global_tfm;
-                node_tfm = parent_tfm * node_tfm;
-            }
-            m_nodetree.nodes[node_index].global_tfm = node_tfm;
-
-            node_index++;
+            const float dur_ticks = anim->duration_ticks;
+            const float animdur_sec = dur_ticks / anim->tps;
+            const float animtime_sec = fmod(time, animdur_sec);
+            const float animtime_ticks = animtime_sec * anim->tps;
+            ntime = animtime_ticks / dur_ticks;
         }
+
+        // Traverse the node tree and animate all nodes
+        m_nodetree.traverse_progressive(
+            [&](SkeletonNode* node, SkeletonNode* parent_node, size_t node_index, size_t parent_index)
+            {
+                node->global_tfm = animateNode(node_index, anim, ntime);
+
+                if (parent_node)
+                    node->global_tfm = parent_node->global_tfm * node->global_tfm;
+            });
 
         m_model_aabb.reset();
         for (int i = 0; i < m_bones.size(); i++)
         {
-            const auto& node_tfm = m_nodetree.nodes[m_bones[i].node_index].global_tfm;
+            const auto& node_tfm = m_nodetree.get_payload_at(m_bones[i].node_index).global_tfm;
             const auto& boneIB_tfm = m_bones[i].inversebind_tfm;
             glm::mat4 M = node_tfm * boneIB_tfm;
 
@@ -1022,7 +1095,90 @@ namespace eeng
 
             if (m_meshes[i].node_index > EENG_NULL_INDEX)
             {
-                glm::mat4 M = m_nodetree.nodes[m_meshes[i].node_index].global_tfm;
+                glm::mat4 M = m_nodetree.get_payload_at(m_meshes[i].node_index).global_tfm;
+                m_mesh_aabbs_pose[i] = m_mesh_aabbs_bind[i].post_transform(glm::vec3(M[3]), glm::mat3(M));
+            }
+            else
+                m_mesh_aabbs_pose[i] = m_mesh_aabbs_bind[i];
+
+            m_model_aabb.grow(m_mesh_aabbs_pose[i]);
+        }
+    }
+
+    void RenderableMesh::animateBlend(
+        int anim_index0,
+        int anim_index1,
+        float time0,
+        float time1,
+        float frac,
+        AnmationTimeFormat animTimeFormat0,
+        AnmationTimeFormat animTimeFormat1)
+    {
+        EENG_ASSERT(anim_index0 >= 0 && anim_index0 < getNbrAnimations(), "{0} is not a valid clip index", anim_index0);
+        EENG_ASSERT(anim_index1 >= 0 && anim_index1 < getNbrAnimations(), "{0} is not a valid clip index", anim_index1);
+
+        AnimationClip* anim0 = &m_animations[anim_index0];
+        AnimationClip* anim1 = &m_animations[anim_index1];
+
+        // Convert to normalized time
+        float ntime0 = time0;
+        float ntime1 = time1;
+        if (anim0 && animTimeFormat0 == AnmationTimeFormat::RealTime)
+        {
+            const float dur_ticks = anim0->duration_ticks;
+            const float animdur_sec = dur_ticks / anim0->tps;
+            const float animtime_sec = fmod(time0, animdur_sec);
+            const float animtime_ticks = animtime_sec * anim0->tps;
+            ntime0 = animtime_ticks / dur_ticks;
+        }
+        if (anim1 && animTimeFormat1 == AnmationTimeFormat::RealTime)
+        {
+            const float dur_ticks = anim1->duration_ticks;
+            const float animdur_sec = dur_ticks / anim1->tps;
+            const float animtime_sec = fmod(time1, animdur_sec);
+            const float animtime_ticks = animtime_sec * anim1->tps;
+            ntime1 = animtime_ticks / dur_ticks;
+        }
+
+        // Traverse the node tree and animate all nodes
+        m_nodetree.traverse_progressive(
+            [&](SkeletonNode* node, SkeletonNode* parent_node, size_t node_index, size_t parent_index)
+            {
+                node->global_tfm = animateBlendNode(node_index, anim0, anim1, ntime0, ntime1, frac);
+
+                if (parent_node)
+                    node->global_tfm = parent_node->global_tfm * node->global_tfm;
+            });
+
+        m_model_aabb.reset();
+        for (int i = 0; i < m_bones.size(); i++)
+        {
+            const auto& node_tfm = m_nodetree.get_payload_at(m_bones[i].node_index).global_tfm;
+            const auto& boneIB_tfm = m_bones[i].inversebind_tfm;
+            glm::mat4 M = node_tfm * boneIB_tfm;
+
+            // Bone matrices
+            boneMatrices[i] = M;
+
+            // AABBs
+            if (m_bone_aabbs_bind[i])
+            {
+                m_bone_aabbs_pose[i] = m_bone_aabbs_bind[i].post_transform(glm::vec3(M[3]), glm::mat3(M));
+                m_model_aabb.grow(m_bone_aabbs_pose[i]);
+            }
+        }
+
+        // Puts mesh AABB's in pose and have them grow model AABB
+        for (int i = 0; i < m_meshes.size(); i++)
+        {
+            if (!m_mesh_aabbs_bind[i])
+                continue;
+            if (m_meshes[i].is_skinned)
+                continue;
+
+            if (m_meshes[i].node_index > EENG_NULL_INDEX)
+            {
+                glm::mat4 M = m_nodetree.get_payload_at(m_meshes[i].node_index).global_tfm;
                 m_mesh_aabbs_pose[i] = m_mesh_aabbs_bind[i].post_transform(glm::vec3(M[3]), glm::mat3(M));
             }
             else

@@ -210,6 +210,22 @@ namespace eeng {
         {
             ImGui_ImplSDL2_ProcessEvent(&event);
 
+            // Skip mouse events if ImGui is capturing mouse input.
+            if ((event.type == SDL_MOUSEMOTION ||
+                event.type == SDL_MOUSEBUTTONDOWN ||
+                event.type == SDL_MOUSEBUTTONUP) &&
+                ImGui::GetIO().WantCaptureMouse)
+            {
+                continue;
+            }
+
+            // Skip keyboard events if ImGui is capturing keyboard input.
+            if ((event.type == SDL_KEYDOWN || event.type == SDL_KEYUP) &&
+                ImGui::GetIO().WantCaptureKeyboard)
+            {
+                continue;
+            }
+
             input->HandleEvent(&event);
 
             if (event.type == SDL_QUIT)
@@ -235,7 +251,7 @@ namespace eeng {
         glEnable(GL_CULL_FACE); // Perform face culling
         glFrontFace(GL_CCW);    // Define winding for a front-facing face
         glCullFace(GL_BACK);    // Cull back-facing faces
-        
+
         // Rasterization stuff
         glEnable(GL_DEPTH_TEST); // Perform depth test when rasterizing
         glDepthFunc(GL_LESS);    // Depth test pass if z < existing z (closer than existing z)
@@ -247,7 +263,7 @@ namespace eeng {
 
         // Bind the default framebuffer (only needed when using multiple render targets)
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        
+
         // Clear depth and color attachments of frame buffer
         glClearColor(0.529f, 0.808f, 0.922f, 1.0f);
         glClearDepth(1.0f);

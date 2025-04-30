@@ -1,15 +1,16 @@
 {
     "version": "2.0.0",
     "tasks": [
-
         // === CONFIGURE TASKS ===
         {
             "type": "shell",
             "label": "CMake Configure (Debug) (Default Generator)",
             "command": "cmake",
             "args": [
-                "-S", "${workspaceFolder}",
-                "-B", "${workspaceFolder}/Debug",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/Debug",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ]
         },
@@ -18,8 +19,10 @@
             "label": "CMake Configure (Release) (Default Generator)",
             "command": "cmake",
             "args": [
-                "-S", "${workspaceFolder}",
-                "-B", "${workspaceFolder}/Release",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/Release",
                 "-DCMAKE_BUILD_TYPE=Release"
             ]
         },
@@ -28,9 +31,12 @@
             "label": "CMake Configure (Debug) (Ninja)",
             "command": "cmake",
             "args": [
-                "-G", "Ninja",
-                "-S", "${workspaceFolder}",
-                "-B", "${workspaceFolder}/Debug",
+                "-G",
+                "Ninja",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/Debug",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ]
         },
@@ -39,13 +45,15 @@
             "label": "CMake Configure (Release) (Ninja)",
             "command": "cmake",
             "args": [
-                "-G", "Ninja",
-                "-S", "${workspaceFolder}",
-                "-B", "${workspaceFolder}/Release",
+                "-G",
+                "Ninja",
+                "-S",
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/Release",
                 "-DCMAKE_BUILD_TYPE=Release"
             ]
-        },        
-        
+        },
         // === BUILD TASKS ===
         {
             "label": "CMake Build (Debug)",
@@ -55,7 +63,7 @@
                 "--build",
                 "${workspaceFolder}/Debug",
                 "--config",
-                "Debug"  // Only needed for multi-config generators
+                "Debug" // Only needed for multi-config generators
             ],
             "group": {
                 "kind": "build",
@@ -75,7 +83,7 @@
                 "--build",
                 "${workspaceFolder}/Release",
                 "--config",
-                "Release"  // Only needed for multi-config generators
+                "Release" // Only needed for multi-config generators
             ],
             "group": {
                 "kind": "build",
@@ -86,5 +94,31 @@
                 "panel": "shared"
             }
         }
+        // === TEST TASKS ===
+        /*
+        {
+            "label": "Run Tests (Debug)",
+            "type": "shell",
+            "command": "ctest --output-on-failure",
+            "options": {
+                "cwd": "${workspaceFolder}/Debug"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Tests (Release)",
+            "type": "shell",
+            "command": "ctest --output-on-failure",
+            "options": {
+                "cwd": "${workspaceFolder}/Release"
+            },
+            "group": "test",
+            "problemMatcher": []
+        }
+            */
     ]
 }

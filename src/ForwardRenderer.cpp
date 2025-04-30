@@ -155,10 +155,10 @@ namespace eeng
             const auto &submesh = mesh->m_meshes[i];
             const auto &mtl = mesh->m_materials[submesh.mtl_index];
 
-            // Append hierarchical transform non-skinned meshes that are linked to nodes
             if (submesh.node_index != EENG_NULL_INDEX && !submesh.is_skinned)
             {
-                const auto WorldMeshMatrix = WorldMatrix * mesh->m_nodetree.nodes[submesh.node_index].global_tfm;
+                // Append hierarchical transform to non-skinned meshes that are linked to nodes
+                const auto WorldMeshMatrix = WorldMatrix * mesh->m_nodetree.get_payload_at(submesh.node_index).global_tfm;
                 glUniformMatrix4fv(glGetUniformLocation(phongShader, "WorldMatrix"), 1, 0, glm::value_ptr(WorldMeshMatrix));
             }
             else
@@ -184,7 +184,7 @@ namespace eeng
             {
                 // if (texture.textureTypeIndex == TextureTypeIndex::Cubemap) continue;
                 const int textureIndex = mtl.textureIndices[textureDesc.textureTypeIndex];
-                const bool hasTexture = (textureIndex != NO_TEXTURE);
+                const bool hasTexture = (textureIndex != NoTexture);
                 if (hasTexture)
                 {
                     glActiveTexture(GL_TEXTURE0 + textureDesc.textureUnit);

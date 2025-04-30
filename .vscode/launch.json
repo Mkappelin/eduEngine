@@ -1,9 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
         // === DEBUG LAUNCH ===
-        
         {
             "name": "Launch (Debug) (Windows)",
             "type": "cppvsdbg",
@@ -17,7 +15,6 @@
             "MIMode": "cppvsdbg",
             "preLaunchTask": "CMake Build (Debug)"
         },
-
         {
             "name": "Launch (Debug) (Linux)",
             "type": "cppdbg",
@@ -39,7 +36,6 @@
             ],
             "miDebuggerPath": "/usr/bin/gdb"
         },
-
         {
             "name": "Launch (Debug) (macOS)",
             "type": "cppdbg",
@@ -53,9 +49,7 @@
             "MIMode": "lldb",
             "preLaunchTask": "CMake Build (Debug)"
         },
-
         // === RELEASE LAUNCH ===
-
         {
             "name": "Launch (Release) (Windows)",
             "type": "cppvsdbg",
@@ -69,7 +63,6 @@
             "MIMode": "cppvsdbg",
             "preLaunchTask": "CMake Build (Release)"
         },
-
         {
             "name": "Launch (Release) (Linux)",
             "type": "cppdbg",
@@ -91,7 +84,6 @@
             ],
             "miDebuggerPath": "/usr/bin/gdb"
         },
-
         {
             "name": "Launch (Release) (macOS)",
             "type": "cppdbg",
@@ -105,5 +97,55 @@
             "MIMode": "lldb",
             "preLaunchTask": "CMake Build (Release)"
         }
+        // === DEBUG LAUNCH TESTS ===
+        /*
+        {
+            "name": "Launch Tests (Debug) (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/tests/tests",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "cppvsdbg",
+            "preLaunchTask": "CMake Build (Debug)"
+        },
+        {
+            "name": "Launch Tests (Debug) (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/tests/tests",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "CMake Build (Debug)",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Launch Tests (Debug) (macOS)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/tests/tests",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "CMake Build (Debug)"
+        }
+            */
     ]
 }
