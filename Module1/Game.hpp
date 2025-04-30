@@ -156,10 +156,10 @@ private:
 
 
     void MovingSystem(Tfm& t, Velocity& v, float dt);
-    void PlayerControllerSystem(PlayerController& pc, Velocity& v);
+    void PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v, const InputManagerPtr& input, const Camera& camera);
     void NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& vel);
     void RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh);
-
+    void FSM(MeshComponent& mesh, const Velocity& vel, float dt);
 };
 
 #endif

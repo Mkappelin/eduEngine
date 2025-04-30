@@ -311,3 +311,67 @@ Loading animation 'mixamo.com', dur in ticks 31, tps 30, nbr channels 52
 	Loading channel mixamorig:Spine2, nbr pos keys  28, nbr scale keys  28, nbr rot keys  28
 Animations in total 3
 Done appending animations.
+Assimp version: 5.0.2399955716
+Assimp about to open file:
+assets/Amy/running.fbx
+Assimp supported formats: 
+*.3d;*.3ds;*.3mf;*.ac;*.ac3d;*.acc;*.amf;*.ase;*.ask;*.assbin;*.b3d;*.blend;*.bvh;*.cob;*.csm;*.dae;*.dxf;*.enff;*.fbx;*.glb;*.gltf;*.hmp;*.ifc;*.ifczip;*.irr;*.irrmesh;*.lwo;*.lws;*.lxo;*.md2;*.md3;*.md5anim;*.md5camera;*.md5mesh;*.mdc;*.mdl;*.mesh;*.mesh.xml;*.mot;*.ms3d;*.ndo;*.nff;*.obj;*.off;*.ogex;*.pk3;*.ply;*.pmx;*.prj;*.q3o;*.q3s;*.raw;*.scn;*.sib;*.smd;*.stl;*.stp;*.ter;*.uc;*.vta;*.x;*.x3d;*.x3db;*.xgl;*.xml;*.zae;*.zgl
+Format fbx supported: YES
+Assimp load OK
+Appending animations... 
+Loading animations...
+Loading animation 'mixamo.com', dur in ticks 21, tps 30, nbr channels 52
+	Loading channel mixamorig:Head, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel mixamorig:Hips, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel mixamorig:LeftArm_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftFoot_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftForeArm_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHand_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandIndex1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandIndex2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandIndex3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandMiddle1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandMiddle2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandMiddle3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandPinky1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandPinky2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandPinky3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandRing1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandRing2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandRing3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandThumb1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  1
+	Loading channel mixamorig:LeftHandThumb2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftHandThumb3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftLeg_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftShoulder_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftToeBase_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:LeftUpLeg_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:Neck_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightArm_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightFoot_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightForeArm_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHand_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandIndex1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandIndex2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandIndex3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandMiddle1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandMiddle2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandMiddle3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandPinky1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandPinky2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandPinky3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandRing1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandRing2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandRing3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandThumb1_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  1
+	Loading channel mixamorig:RightHandThumb2_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightHandThumb3_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightLeg_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightShoulder_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightToeBase_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:RightUpLeg_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:Spine_$AssimpFbx$_Rotation, nbr pos keys  1, nbr scale keys  1, nbr rot keys  21
+	Loading channel mixamorig:Spine1, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+	Loading channel mixamorig:Spine2, nbr pos keys  21, nbr scale keys  21, nbr rot keys  21
+Animations in total 4
+Done appending animations.

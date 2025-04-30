@@ -67,7 +67,7 @@ bool Game::init()
        { 0, 0, 0 },
        { 0.01f, 0.01f, 0.01f } });
     entity_registry->emplace<Velocity>(entPlayer, Velocity{ glm::vec3(0.0f) });
-    entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ marcoMesh });
+    entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ characterMesh });
     entity_registry->emplace<PlayerController>(entPlayer);
 
 
@@ -101,6 +101,7 @@ bool Game::init()
     characterMesh->load("assets/Amy/Ch46_nonPBR.fbx");
     characterMesh->load("assets/Amy/idle.fbx", true);
     characterMesh->load("assets/Amy/walking.fbx", true);
+    characterMesh->load("assets/Amy/running.fbx", true);
     // Remove root motion
     characterMesh->removeTranslationKeys("mixamorig:Hips");
 #endif
@@ -150,17 +151,7 @@ void Game::update(
         Game::MovingSystem(position, velocity, deltaTime);
     }
 
-    //Update Player
-    auto viewPC = entity_registry->view<PlayerController, Velocity>();
-
-    for (auto entity : viewPC)
-    {
-        auto& pc = viewPC.get<PlayerController>(entity);
-        auto& velocity = viewPC.get<Velocity>(entity);
-
-        Game::PlayerControllerSystem(pc, velocity);
-    }
-
+  
     // Update Camera, till min player, inte default
     auto viewC = entity_registry->view<PlayerController, Tfm>();
     for (auto entity : viewC)
@@ -180,6 +171,17 @@ void Game::update(
         auto& vel = npcs.get<Velocity>(entity);
 
         NPCControllerSystem(npc, tfm, vel);
+    }
+
+    //Updatera FSM
+    auto characters = entity_registry->view<Velocity, MeshComponent>();
+
+    for (auto entity : characters)
+    {
+        auto& vel = characters.get<Velocity>(entity);
+        auto& mesh = characters.get<MeshComponent>(entity);
+
+        FSM(mesh, vel, time); // pass in both so FSM can change animation based on speed
     }
 
 
@@ -279,6 +281,7 @@ void Game::render(
     forwardRenderer->renderMesh(characterMesh, characterWorldMatrix3);
     character_aabb3 = characterMesh->m_model_aabb.post_transform(characterWorldMatrix3);
 
+
     // End rendering pass
     drawcallCount = forwardRenderer->endPass();
 
@@ -335,7 +338,8 @@ void Game::renderUI()
 
     ImGui::Text("Modify player settings:");
 
-
+    ImGui::Text("Player position: (%.1f, %.1f, %.1f)", player.pos.x, player.pos.y, player.pos.z);
+    ImGui::Text("Player Velocity: (%.1f)", player.velocity);
     ImGui::SliderFloat("Player max velocity", &player.velocity, 1.0f, 20.0f);
 
     
@@ -472,69 +476,67 @@ void Game::updateCamera(
     camera.pos = camera.lookAt + glm::vec3(rotatedPos);
 }
 
-void Game::updatePlayer(
-    float deltaTime,
-    InputManagerPtr input)
+void Game::updatePlayer(float deltaTime, InputManagerPtr input)
 {
-    // Fetch keys relevant for player movement
-    using Key = eeng::InputManager::Key;
-    bool W = input->IsKeyPressed(Key::W);
-    bool A = input->IsKeyPressed(Key::A);
-    bool S = input->IsKeyPressed(Key::S);
-    bool D = input->IsKeyPressed(Key::D);
+    // Fetch the player controller and velocity components (this could be part of an entity system if using one)
+    auto view = entity_registry->view<PlayerController, Velocity>();
 
-    // Compute vectors in the local space of the player
-    player.fwd = glm::vec3(glm_aux::R(camera.yaw, glm_aux::vec3_010) * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
-    player.right = glm::cross(player.fwd, glm_aux::vec3_010);
-
-    glm::vec3 moveDir =
-        player.fwd * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
-        player.right * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
-
-    if (glm::length(moveDir) > 0.0f)
-        moveDir = glm::normalize(moveDir) * player.velocity;
-
-    // Apply to the actual entity with PlayerController
-    auto view = entity_registry->view<PlayerController>();
     for (auto entity : view)
     {
-        view.get<PlayerController>(entity).direction = moveDir;
+        auto& pc = view.get<PlayerController>(entity);
+        auto& v = view.get<Velocity>(entity);
+
+        // Update the movement direction based on player input
+        PlayerControllerSystem(pc, v, input, camera);
+
+        // You can apply any additional logic here, such as position updates or animations
+
+        // Update player's forward view ray (this could be useful for AI, camera systems, etc.)
+        player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0.0f, 2.0f, 0.0f), player.fwd };
     }
-
-    // View ray (still useful)
-    player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0.0f, 2.0f, 0.0f), player.fwd };
-
-
-
-    //// Compute the total movement as a 3D vector
-    //auto movement =
-    //    player.fwd * player.velocity * deltaTime * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
-    //    player.right * player.velocity * deltaTime * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
-
-    //// Update player position and forward view ray
-    //player.pos += movement;
-    //player.viewRay = glm_aux::Ray{ player.pos + glm::vec3(0.0f, 2.0f, 0.0f), player.fwd };
-
-    //// Update camera to track the player
-    //camera.lookAt += movement;
-    //camera.pos += movement;
-
 }
+
 
 void Game::MovingSystem(Game::Tfm& tfm, Game::Velocity& v, float deltaTime)
 {
     tfm.position += v.velocity * deltaTime;
 }
-void Game::PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v)
+void Game::PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v, const InputManagerPtr& input, const Camera& camera)
 {
-    v.velocity = pc.direction;
+    using Key = eeng::InputManager::Key;
+
+    bool W = input->IsKeyPressed(Key::W);
+    bool A = input->IsKeyPressed(Key::A);
+    bool S = input->IsKeyPressed(Key::S);
+    bool D = input->IsKeyPressed(Key::D);
+
+    glm::vec3 fwd = glm_aux::R(camera.yaw, glm_aux::vec3_010) * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f);
+    glm::vec3 right = glm::cross(fwd, glm_aux::vec3_010);
+
+    glm::vec3 moveDir =
+        fwd * ((W ? 1.0f : 0.0f) + (S ? -1.0f : 0.0f)) +
+        right * ((A ? -1.0f : 0.0f) + (D ? 1.0f : 0.0f));
+
+    if (glm::length(moveDir) > 0.0f) {
+        moveDir = glm::normalize(moveDir) * player.velocity; // or just hardcode to 5.0f for now
+    }
+
+    pc.direction = moveDir;
+    v.velocity = moveDir;
+
+    eeng::Log("IsKeyPressed W: %d, A: %d, S: %d, D: %d", W, A, S, D);
+    eeng::Log("Resulting moveDir: %s", glm_aux::to_string(moveDir).c_str());
 }
+
+
+
 void Game::RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh)
 {
     glm::mat4 objWorldMatrix = glm_aux::TRS(
         tfm.position,
         tfm.rotation.y, { 0, 1, 0 },
         tfm.scale);
+
 
 	forwardRenderer->renderMesh(entityMesh.mesh, objWorldMatrix);
 }
@@ -555,4 +557,46 @@ void Game::NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& v)
 
     glm::vec3 direction = glm::normalize(toTarget);
     v.velocity = direction * npcc.speed;
+}
+void Game::FSM(MeshComponent& mesh, const Velocity& v, float dt)
+{
+    enum State
+    {
+        IDLE,
+        WALKING,
+        RUNNING
+    };
+
+    State currentState;
+    float speed = glm::length(v.velocity);
+
+    // Assuming v.velocity.x is a value that indicates speed or velocity
+    if (speed == 0)
+    {
+        currentState = IDLE;
+    }
+    else if (speed <= 7)
+    {
+        currentState = WALKING;  // Walking speed
+    }
+    else
+    {
+        currentState = RUNNING;  // Running speed
+    }
+
+    switch (currentState)
+    {
+    case IDLE:
+		mesh.mesh->animate(1, dt * characterAnimSpeed);
+		break;
+	case WALKING:
+        mesh.mesh->animate(2, dt * characterAnimSpeed);
+        break;
+    case RUNNING:
+        mesh.mesh->animate(3, dt * characterAnimSpeed);
+        break;
+    default:
+        
+        break;
+    }
 }
