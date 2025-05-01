@@ -125,7 +125,6 @@ private:
         InputManagerPtr input);
 
 
-    //Assignment 1
 
     struct Tfm
     {
@@ -154,12 +153,24 @@ private:
         glm::vec3 direction = glm::vec3(0.0f);
     };
 
+    struct AnimState {
+        int currentState = 0;
+        int previousState = 0;
+        float blendTimer = 0.0f;
+    };
+
+    bool useBlendingFSM = true;
+    float debugBlendFactor = 1.0f;
+    bool useDebugBlend = false;
+    bool showBoneGizmos = false;
+
 
     void MovingSystem(Tfm& t, Velocity& v, float dt);
     void PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v, const InputManagerPtr& input, const Camera& camera);
     void NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& vel);
     void RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh);
     void FSM(MeshComponent& mesh, const Velocity& vel, float dt);
+	void FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time);
 };
 
 #endif

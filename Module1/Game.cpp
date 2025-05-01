@@ -69,6 +69,8 @@ bool Game::init()
     entity_registry->emplace<Velocity>(entPlayer, Velocity{ glm::vec3(0.0f) });
     entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ characterMesh });
     entity_registry->emplace<PlayerController>(entPlayer);
+    entity_registry->emplace<AnimState>(entPlayer);
+
 
 
     //Fox entity
@@ -173,16 +175,21 @@ void Game::update(
         NPCControllerSystem(npc, tfm, vel);
     }
 
-    //Updatera FSM
-    auto characters = entity_registry->view<Velocity, MeshComponent>();
-
+    //Uppdatera FSM/Blend
+    auto characters = entity_registry->view<Velocity, MeshComponent, AnimState>();
     for (auto entity : characters)
     {
         auto& vel = characters.get<Velocity>(entity);
         auto& mesh = characters.get<MeshComponent>(entity);
+        auto& anim = characters.get<AnimState>(entity);
 
-        FSM(mesh, vel, time); // pass in both so FSM can change animation based on speed
+        if (useBlendingFSM)
+            FSMWithBlend(mesh, vel, anim, deltaTime, time);
+        else
+            FSM(mesh, vel, time);
     }
+
+
 
 
     pointlight.pos = glm::vec3(
@@ -281,6 +288,32 @@ void Game::render(
     forwardRenderer->renderMesh(characterMesh, characterWorldMatrix3);
     character_aabb3 = characterMesh->m_model_aabb.post_transform(characterWorldMatrix3);
 
+    if (showBoneGizmos) {
+        float axisLen = 25.0f;
+        for (int i = 0; i < characterMesh->boneMatrices.size(); ++i) {
+            auto IBinverse = glm::inverse(characterMesh->m_bones[i].inversebind_tfm);
+            glm::mat4 global = characterWorldMatrix3 * characterMesh->boneMatrices[i] * IBinverse;
+            glm::vec3 pos = glm::vec3(global[3]);
+
+            glm::vec3 right = glm::vec3(global[0]); // X
+            glm::vec3 up = glm::vec3(global[1]); // Y
+            glm::vec3 fwd = glm::vec3(global[2]); // Z
+
+            shapeRenderer->push_states(ShapeRendering::Color4u::Red);
+            shapeRenderer->push_line(pos, pos + axisLen * right);
+
+            shapeRenderer->push_states(ShapeRendering::Color4u::Green);
+            shapeRenderer->push_line(pos, pos + axisLen * up);
+
+            shapeRenderer->push_states(ShapeRendering::Color4u::Blue);
+            shapeRenderer->push_line(pos, pos + axisLen * fwd);
+
+            shapeRenderer->pop_states<ShapeRendering::Color4u>();
+            shapeRenderer->pop_states<ShapeRendering::Color4u>();
+            shapeRenderer->pop_states<ShapeRendering::Color4u>();
+        }
+    }
+
 
     // End rendering pass
     drawcallCount = forwardRenderer->endPass();
@@ -334,15 +367,38 @@ void Game::render(
 
 void Game::renderUI()
 {
+    static const char* stateNames[] = {
+    "Idle",
+    "Walking",
+    "Running"
+    };
     ImGui::Begin("Player Settings");
 
     ImGui::Text("Modify player settings:");
-
+    
+    
     ImGui::Text("Player position: (%.1f, %.1f, %.1f)", player.pos.x, player.pos.y, player.pos.z);
     ImGui::Text("Player Velocity: (%.1f)", player.velocity);
     ImGui::SliderFloat("Player max velocity", &player.velocity, 1.0f, 20.0f);
 
-    
+    ImGui::End();
+
+    ImGui::Begin("Animation Settings");
+
+    ImGui::Checkbox("Use manual blend factor", &useDebugBlend);
+    ImGui::SliderFloat("Manual Blend Factor", &debugBlendFactor, 0.0f, 1.0f);
+    ImGui::Checkbox("Use Blending FSM", &useBlendingFSM);
+
+	// Show current animation state
+    auto characters = entity_registry->view<AnimState>();
+    for (auto entity : characters)
+    {
+        auto& anim = characters.get<AnimState>(entity);
+
+        ImGui::Text("Current FSM State: %s", stateNames[anim.currentState]);
+        break; 
+    }
+
     ImGui::End();
 
     ImGui::Begin("NPC Settings");
@@ -380,6 +436,8 @@ void Game::renderUI()
     ImGui::Text("In-game Time: %.2f", SDL_GetTicks() / 1000.0f);
 
     ImGui::Text("Drawcall count %i", drawcallCount);
+
+    ImGui::Checkbox("Show Bone Gizmos", &showBoneGizmos);
 
     if (ImGui::ColorEdit3("Light color",
         glm::value_ptr(pointlight.color),
@@ -526,10 +584,13 @@ void Game::PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v,
 
     eeng::Log("IsKeyPressed W: %d, A: %d, S: %d, D: %d", W, A, S, D);
     eeng::Log("Resulting moveDir: %s", glm_aux::to_string(moveDir).c_str());
+
+    if (input->IsKeyPressed(Key::G))
+    {
+        showBoneGizmos = !showBoneGizmos;
+        eeng::Log("Bone gizmos: %s", showBoneGizmos ? "ON" : "OFF");
+    }
 }
-
-
-
 void Game::RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh)
 {
     glm::mat4 objWorldMatrix = glm_aux::TRS(
@@ -570,18 +631,17 @@ void Game::FSM(MeshComponent& mesh, const Velocity& v, float dt)
     State currentState;
     float speed = glm::length(v.velocity);
 
-    // Assuming v.velocity.x is a value that indicates speed or velocity
     if (speed == 0)
     {
         currentState = IDLE;
     }
     else if (speed <= 7)
     {
-        currentState = WALKING;  // Walking speed
+        currentState = WALKING; 
     }
     else
     {
-        currentState = RUNNING;  // Running speed
+        currentState = RUNNING; 
     }
 
     switch (currentState)
@@ -600,3 +660,37 @@ void Game::FSM(MeshComponent& mesh, const Velocity& v, float dt)
         break;
     }
 }
+void Game::FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time)
+{
+    enum State { IDLE, WALKING, RUNNING };
+
+    float speed = glm::length(v.velocity);
+    int newState;
+
+    if (speed == 0.0f)
+        newState = IDLE;
+    else if (speed <= 7.0f)
+        newState = WALKING;
+    else
+        newState = RUNNING;
+
+    if (newState != anim.currentState)
+    {
+        anim.previousState = anim.currentState;
+        anim.currentState = newState;
+        anim.blendTimer = 0.0f;
+    }
+
+    anim.blendTimer += deltaTime;
+    float blendFactor = glm::clamp(anim.blendTimer / 0.5f, 0.0f, 1.0f);
+    if (useDebugBlend) blendFactor = debugBlendFactor;
+
+    mesh.mesh->animateBlend(
+        anim.previousState + 1,
+        anim.currentState + 1,
+        time,
+        time,
+        blendFactor);
+}
+
+
