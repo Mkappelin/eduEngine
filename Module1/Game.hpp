@@ -171,6 +171,42 @@ private:
     void RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh);
     void FSM(MeshComponent& mesh, const Velocity& vel, float dt);
 	void FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time);
+
+    //Refactoring things
+
+	//Init
+    void initEntities();
+    void initNPCEntity();
+	void initPlayerEntity();
+    void initFoxEntity();
+
+    void initMeshes();
+
+    void initWorldTransforms();
+	void initRenderers();
+
+    //Update
+    void updateMovement(float deltaTime);
+    void updateCameraTarget();
+    void updateNPCs();
+    void updateCharacterFSMs(float deltaTime, float time);
+    void updateWorldTransforms(float time);
+    void updatePlayerRayIntersections();
+    void handlePicking(InputManagerPtr input, float time);
+
+    //Rendering
+    void renderPlayerUI();
+    void renderAnimationUI();
+    void renderNPCUI();
+    void renderGameInfoUI();
+
+    void renderEntities();
+	void renderMesh(float time);
+	void beginRenderingPass();
+	void endRenderingPass();
+	void renderDebugBoneGizmos();
+	void renderDebugShapes();
+	void updateViewProjectionMatrices(int windowWidth, int windowHeight);
 };
 
 #endif
