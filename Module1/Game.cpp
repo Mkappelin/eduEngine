@@ -5,6 +5,9 @@
 #include "Log.hpp"
 #include "Game.hpp"
 #include <SDL.h>
+#include "CollisionUtils.h"
+#include "CollisionSystem.h"
+#include <glm/gtx/string_cast.hpp>
 
 
 bool Game::init()
@@ -14,9 +17,19 @@ bool Game::init()
     
     entity_registry = std::make_shared<entt::registry>();
    
+	initQuestManager();
 	initMeshes();
 	initEntities();
 	initWorldTransforms();
+	initHealthSystem();
+
+    //Make into a method later 
+    eventQueue.RegisterListener([](std::string evt) {
+        if (evt == "PLAYER_DIED") {
+            std::cout << "[EventQueue] Received: " << evt << " — Game Over.\n";
+			// TODO: Logic to handle player death... if it was a real game
+        }
+        });
 
     return true;
 }
@@ -36,6 +49,14 @@ void Game::update(
     updateWorldTransforms(time);
     updatePlayerRayIntersections();
     handlePicking(input, time);
+
+    BVHNode rootBVH = BuildFlatBVH(*entity_registry);
+	updateColliders();
+	updateAABBColliders();
+    CollisionSystem(*entity_registry, *fireHazard, rootBVH, entFood, entHorse);
+
+    eventQueue.BroadcastAllEvents();
+
 }
 
 void Game::render(
@@ -111,11 +132,11 @@ void Game::updatePlayer(float deltaTime, InputManagerPtr input)
 }
 
 
-void Game::MovingSystem(Game::Tfm& tfm, Game::Velocity& v, float deltaTime)
+void Game::MovingSystem(Tfm& tfm, Velocity& v, float deltaTime)
 {
     tfm.position += v.velocity * deltaTime;
 }
-void Game::PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v, const InputManagerPtr& input, const Camera& camera)
+void Game::PlayerControllerSystem(PlayerController& pc, Velocity& v, const InputManagerPtr& input, const Camera& camera)
 {
     using Key = eeng::InputManager::Key;
 
@@ -216,14 +237,18 @@ void Game::FSM(MeshComponent& mesh, const Velocity& v, float dt)
         break;
     }
 }
-void Game::FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time)
+void Game::FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time, entt::entity entity)
 {
-    enum State { IDLE, WALKING, RUNNING };
+    enum State { IDLE, WALKING, RUNNING, DEAD };
 
     float speed = glm::length(v.velocity);
     int newState;
-
-    if (speed == 0.0f)
+    
+    auto& health = entity_registry->get<Health>(entity);
+    if (health.currentHealth <= 0.0f) {
+		newState = IDLE; // Dead state, no animation
+    }
+    else if (speed == 0.0f)
         newState = IDLE;
     else if (speed <= 7.0f)
         newState = WALKING;
@@ -249,13 +274,15 @@ void Game::FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float
         blendFactor);
 }
 
-//Entities
+//Init
 void Game::initEntities() {
     entity_registry = std::make_shared<entt::registry>();
 
     initNPCEntity();
     initPlayerEntity();
     initFoxEntity();
+	initHorseEntity();
+	initFoodEntity();
 }
 void Game::initNPCEntity() 
 {
@@ -276,6 +303,24 @@ void Game::initNPCEntity()
     };
     npc.speed = 2.0f;
     entity_registry->emplace<NPCController>(entNPC, npc);
+    entity_registry->emplace<SphereColliderComponent>(entNPC, SphereColliderComponent{ .center = {}, .radius = 0.5f });
+    entity_registry->emplace<AABBColliderComponent>(entNPC, AABBColliderComponent{ .center = {}, .halfWidths = { 0.5f, 0.5f, 0.5f }, .isTrigger = true });
+}
+void Game::initPlayerEntity() 
+{
+    auto entPlayer = entity_registry->create();
+    entity_registry->emplace<Tfm>(entPlayer, Tfm{
+       { 15.0f, 0.0f, 15.0f },
+       { 0, 0, 0 },
+       { 0.01f, 0.01f, 0.01f } });
+    entity_registry->emplace<Velocity>(entPlayer, Velocity{ glm::vec3(0.0f) });
+    entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ characterMesh });
+    entity_registry->emplace<PlayerController>(entPlayer);
+    entity_registry->emplace<AnimState>(entPlayer);
+	entity_registry->emplace<Health>(entPlayer, Health{ 100.0f, 100.0f });
+    entity_registry->emplace<SphereColliderComponent>(entPlayer, SphereColliderComponent{.center = {}, .radius = 0.5f});
+	entity_registry->emplace<AABBColliderComponent>(entPlayer, AABBColliderComponent{ .center = {}, .halfWidths = { 0.5f, 0.5f, 0.5f }, .isTrigger = false });
+    entity_registry->emplace<Source>(entPlayer);
 }
 void Game::initFoxEntity() 
 {
@@ -285,20 +330,32 @@ void Game::initFoxEntity()
         { 0, 0, 0 },
         { 0.01f, 0.01f, 0.01f } });
     entity_registry->emplace<MeshComponent>(entFox, MeshComponent{ foxMesh });
-    entity_registry->emplace<Velocity>(entFox, Velocity{ {1,1,1} });
+    entity_registry->emplace<Velocity>(entFox, Velocity{ glm::vec3(0.0f) });
+    entity_registry->emplace<SphereColliderComponent>(entFox, SphereColliderComponent{ .center = {}, .radius = 0.5f });
+	entity_registry->emplace<AABBColliderComponent>(entFox, AABBColliderComponent{ .center = {}, .halfWidths = { 0.5f, 0.5f, 0.5f }, .isTrigger = false });
+    entity_registry->emplace<Source>(entFox);
 }
-void Game::initPlayerEntity() 
+void Game::initHorseEntity() 
 {
-    auto entPlayer = entity_registry->create();
-    entity_registry->emplace<Tfm>(entPlayer, Tfm{
-       { 5.0f, 0.0f, 5.0f },
-       { 0, 0, 0 },
-       { 0.01f, 0.01f, 0.01f } });
-    entity_registry->emplace<Velocity>(entPlayer, Velocity{ glm::vec3(0.0f) });
-    entity_registry->emplace<MeshComponent>(entPlayer, MeshComponent{ characterMesh });
-    entity_registry->emplace<PlayerController>(entPlayer);
-    entity_registry->emplace<AnimState>(entPlayer);
+	auto entHorse = entity_registry->create();
+	entity_registry->emplace<Tfm>(entHorse, Tfm{
+		{ 10.0f, 0.0f, 10.0f },
+		{ 0, 0, 0 },
+		{ 0.01f, 0.01f, 0.01f } });
+	entity_registry->emplace<Velocity>(entHorse, Velocity{ glm::vec3(0.0f) });
+	entity_registry->emplace<MeshComponent>(entHorse, MeshComponent{ horseMesh });
+    entity_registry->emplace<AABBColliderComponent>(entHorse, AABBColliderComponent{ { 25.0f, 0.0f, 25.0f }, {1.0f, 1.0f, 1.0f}, true });
+    entity_registry->emplace<Source>(entHorse, *horseSource);
 }
+void Game::initFoodEntity() 
+{
+	auto entFood = entity_registry->create();
+    entity_registry->emplace<Tfm>(entFood, Tfm{ { 20.0f, 0.0f, 25.0f }, {}, {1.0f, 1.0f, 1.0f} });
+    entity_registry->emplace<AABBColliderComponent>(entFood, AABBColliderComponent{ { 5.0f, 0.0f, 5.0f }, {1.0f, 1.0f, 1.0f}, true });
+    entity_registry->emplace<Source>(entFood, *foodSource);
+    entity_registry->emplace<MeshComponent>(entFood, MeshComponent{ foxMesh });
+}
+
 void Game::initMeshes()
 {
     grassMesh = std::make_shared<eeng::RenderableMesh>();
@@ -373,6 +430,25 @@ void Game::initRenderers()
     shapeRenderer = std::make_shared<ShapeRendering::ShapeRenderer>();
     shapeRenderer->init();
 }
+void Game::initHealthSystem() {
+    healthSystem = std::make_unique<HealthSystem>(*entity_registry, eventQueue);
+    fireHazard = std::make_unique<FireHazard>();
+    fireHazard->AddObserver(healthSystem.get());
+
+
+}
+void Game::initQuestManager() 
+{
+    questManager = std::make_unique<QuestManager>();
+    foodSource = std::make_unique<Source>();
+    horseSource = std::make_unique<Source>();
+
+    auto* questPtr = questManager.get();
+
+    foodSource->AddObserver(questPtr);
+    horseSource->AddObserver(questPtr);
+
+}
 
 // Update 
 void Game::updateMovement(float deltaTime) 
@@ -414,7 +490,7 @@ void Game::updateCharacterFSMs(float deltaTime, float time)
         auto& anim = characters.get<AnimState>(entity);
 
         if (useBlendingFSM)
-            FSMWithBlend(mesh, vel, anim, deltaTime, time);
+            FSMWithBlend(mesh, vel, anim, deltaTime, time, entity);
         else
             FSM(mesh, vel, time);
     }
@@ -450,6 +526,24 @@ void Game::handlePicking(InputManagerPtr input, float time)
             glm_aux::to_string(ray.dir).c_str());
     }
 }
+void Game::updateColliders()
+{
+    auto view = entity_registry->view<Tfm, SphereColliderComponent>();
+    for (auto entity : view) {
+        auto& tfm = view.get<Tfm>(entity);
+        auto& collider = view.get<SphereColliderComponent>(entity);
+        collider.center = tfm.position;
+    }
+}
+void Game::updateAABBColliders() 
+{
+    auto view = entity_registry->view<Tfm, AABBColliderComponent>();
+    for (auto entity : view) {
+        auto& tfm = view.get<Tfm>(entity);
+        auto& collider = view.get<AABBColliderComponent>(entity);
+        collider.center = tfm.position;
+    }
+}
 
 // UI
 void Game::renderPlayerUI() 
@@ -460,6 +554,12 @@ void Game::renderPlayerUI()
     ImGui::Text("Player position: (%.1f, %.1f, %.1f)", player.pos.x, player.pos.y, player.pos.z);
     ImGui::Text("Player Velocity: (%.1f)", player.velocity);
     ImGui::SliderFloat("Player max velocity", &player.velocity, 1.0f, 20.0f);
+
+    auto view = entity_registry->view<PlayerController, Health>();
+    for (auto entity : view) {
+        auto& h = view.get<Health>(entity);
+        ImGui::Text("Player Health: %.1f / %.1f", h.currentHealth, h.maxHealth);
+    }
 
     ImGui::End();
 }
@@ -595,6 +695,20 @@ void Game::renderGameInfoUI()
 
     ImGui::SliderFloat("Animation speed", &characterAnimSpeed, 0.1f, 5.0f);
 
+    if (questManager) {
+        switch (questManager->stage) {
+        case QuestStage::FIND_FOOD:
+            ImGui::Text("Quest: Find food!");
+            break;
+        case QuestStage::FEED_HORSE:
+            ImGui::Text("Quest: Feed the horse!");
+            break;
+        case QuestStage::QUEST_COMPLETE:
+            ImGui::Text("Quest Complete! The horse is happy!");
+            break;
+        }
+    }
+
     ImGui::End(); 
 }
 
@@ -710,6 +824,34 @@ void Game::renderDebugShapes()
         shapeRenderer->pop_states<ShapeRendering::Color4u>();
     }
 
+    // Draw SphereCollider
+    auto view = entity_registry->view<SphereColliderComponent>();
+    for (auto entity : view) {
+        const auto& collider = view.get<SphereColliderComponent>(entity);
+
+        glm::mat4 transform = glm_aux::T(collider.center) *
+            glm::scale(glm::mat4(1.0f), glm::vec3(collider.radius));
+
+        shapeRenderer->push_states(transform);
+        shapeRenderer->push_sphere(1.0f, 0.5f); // Likely a unit sphere scaled by transform
+        shapeRenderer->pop_states<glm::mat4>();
+    }
+
+	// Draw AABBCollider from ECS
+
+    shapeRenderer->push_states(ShapeRendering::Color4u{ 0xFFE61A80 });
+
+    auto aabbView = entity_registry->view<AABBColliderComponent>();
+    for (auto entity : aabbView) {
+        const auto& aabb = aabbView.get<AABBColliderComponent>(entity);
+        glm::vec3 min = aabb.center - aabb.halfWidths;
+        glm::vec3 max = aabb.center + aabb.halfWidths;
+        shapeRenderer->push_AABB(min, max);
+    }
+
+    shapeRenderer->pop_states<ShapeRendering::Color4u>();
+
+
 #if 0
     // Demo draw other shapes
     {
@@ -736,3 +878,5 @@ void Game::updateViewProjectionMatrices(int windowWidth, int windowHeight)
 
     matrices.VP = glm_aux::create_viewport_matrix(0.0f, 0.0f, windowWidth, windowHeight, 0.0f, 1.0f);
 }
+
+

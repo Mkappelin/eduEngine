@@ -7,6 +7,12 @@
 #include "RenderableMesh.hpp"
 #include "ForwardRenderer.hpp"
 #include "ShapeRenderer.hpp"
+#include "Components.h"
+#include "HealthSystem.h"
+#include "FireHazard.h"
+#include "EventQueue.h"
+#include "BVHBuilder.h"
+#include "QuestManager.h"
 
 /// @brief A Game may hold, update and render 3D geometry and GUI elements
 class Game : public eeng::GameBase
@@ -125,39 +131,21 @@ private:
         InputManagerPtr input);
 
 
+    // unique ptrs
+    std::unique_ptr<HealthSystem> healthSystem;
+    std::unique_ptr<FireHazard> fireHazard;
+    std::unique_ptr<QuestManager> questManager;
+    std::unique_ptr<Source> foodSource;
+    std::unique_ptr<Source> horseSource;
 
-    struct Tfm
-    {
-        glm::vec3 position, rotation, scale;
-    };
 
-    struct Velocity 
-    {
-        glm::vec3 velocity;
-    };
-    struct MeshComponent 
-    {
-        std::shared_ptr<eeng::RenderableMesh> mesh;
-    };
-    struct NPCController 
-    {
-        std::vector<glm::vec3> waypoints;
-		int currentWaypoint = 0;
-		float speed = 2.0f;
-        bool canTrade;
-        bool canRepair;
-        bool hostile;
-    };
-    struct PlayerController 
-    {
-        glm::vec3 direction = glm::vec3(0.0f);
-    };
 
-    struct AnimState {
-        int currentState = 0;
-        int previousState = 0;
-        float blendTimer = 0.0f;
-    };
+    entt::entity entFood;
+    entt::entity entHorse;
+
+
+    EventQueue eventQueue;
+
 
     bool useBlendingFSM = true;
     float debugBlendFactor = 1.0f;
@@ -166,11 +154,11 @@ private:
 
 
     void MovingSystem(Tfm& t, Velocity& v, float dt);
-    void PlayerControllerSystem(Game::PlayerController& pc, Game::Velocity& v, const InputManagerPtr& input, const Camera& camera);
+    void PlayerControllerSystem(PlayerController& pc, Velocity& v, const InputManagerPtr& input, const Camera& camera);
     void NPCControllerSystem(NPCController& npcc, Tfm& tfm, Velocity& vel);
     void RenderSystem(eeng::ForwardRendererPtr& forwardRenderer, Tfm& tfm, MeshComponent& entityMesh);
     void FSM(MeshComponent& mesh, const Velocity& vel, float dt);
-	void FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time);
+	void FSMWithBlend(MeshComponent& mesh, Velocity& v, AnimState& anim, float deltaTime, float time, entt::entity entity);
 
     //Refactoring things
 
@@ -179,11 +167,15 @@ private:
     void initNPCEntity();
 	void initPlayerEntity();
     void initFoxEntity();
+    void initHorseEntity();
+    void initFoodEntity();
 
     void initMeshes();
 
     void initWorldTransforms();
 	void initRenderers();
+	void initHealthSystem();
+	void initQuestManager();
 
     //Update
     void updateMovement(float deltaTime);
@@ -193,6 +185,9 @@ private:
     void updateWorldTransforms(float time);
     void updatePlayerRayIntersections();
     void handlePicking(InputManagerPtr input, float time);
+	void updateColliders();
+    void updateAABBColliders();
+
 
     //Rendering
     void renderPlayerUI();
